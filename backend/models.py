@@ -17,6 +17,11 @@ class Task(Base):
     source = Column(String, default="manual")    # manual, syllabus, lms, email
     created_at = Column(DateTime, default=datetime.utcnow)
 
+    # Support for fixed events (meetings, classes)
+    is_fixed = Column(Boolean, default=False)
+    fixed_start = Column(DateTime, nullable=True)
+    fixed_end = Column(DateTime, nullable=True)
+
     sessions = relationship("ScheduledSession", back_populates="task", cascade="all, delete-orphan")
 
 class ScheduledSession(Base):
