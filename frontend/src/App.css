@@ -1,0 +1,31 @@
+/* Minimal reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input, select, button {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #3b82f6;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+.fc-event {
+  cursor: default !important;
+}
