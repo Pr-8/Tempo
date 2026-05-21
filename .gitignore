@@ -1,0 +1,63 @@
+# --- Python / Backend ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.venv/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# --- Node / Frontend ---
+node_modules/
+dist/
+dist-ssr/
+*.local
+.vite/
+
+# --- Environment & Secrets ---
+.env
+.env.test
+.env.production
+# Keep .env.example tracked!
+!.env.example
+
+# --- Databases ---
+*.db
+*.sqlite3
+*.sqlite
+# PostgreSQL local artifacts (if any)
+pgdata/
+
+# --- OS Specific ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# --- IDEs ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# --- Alembic ---
+# We want to keep migrations, but some logs or temporary files can be ignored
+alembic/versions/__pycache__/
+
+# --- Project Specific ---
+# Ignore test-specific database files created during our CLI runs
+test_*.db
+tempo_test.db

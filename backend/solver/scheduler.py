@@ -25,6 +25,8 @@ def generate_slots(start_date, horizon_days, available_days_str, day_start_str, 
     slots = []
     current_index = 0
     
+    now = datetime.now()
+    
     for d in range(horizon_days):
         current_date = start_date + timedelta(days=d)
         if current_date.isoformat() in blocked_set:
@@ -36,12 +38,13 @@ def generate_slots(start_date, horizon_days, available_days_str, day_start_str, 
         end_dt = datetime.combine(current_date, time(end_h, end_m))
         
         while current_dt + timedelta(minutes=SLOT_MINUTES) <= end_dt:
-            slots.append({
-                "index": current_index,
-                "dt": current_dt
-            })
+            if current_dt >= now: # Only schedule in the future
+                slots.append({
+                    "index": current_index,
+                    "dt": current_dt
+                })
+                current_index += 1
             current_dt += timedelta(minutes=SLOT_MINUTES)
-            current_index += 1
             
     return slots
 

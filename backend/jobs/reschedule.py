@@ -17,19 +17,24 @@ def run_reschedule_pipeline(user_id: str):
     Orchestrates the full scheduling flow:
     Context Builder -> Solver -> DB Update -> LLM Explainer
     """
+    print(f"DEBUG: Starting reschedule for {user_id}")
     with get_db_context() as db:
         # 1. Build scheduling request from DB state
         try:
             scheduling_request = build_scheduling_request(user_id, db)
+            print(f"DEBUG: Request built with {len(scheduling_request['tasks'])} tasks")
         except ValueError as e:
+            print(f"DEBUG: Context builder error: {e}")
             logger.error(f"Error building scheduling request: {e}")
             return None
 
         if not scheduling_request["tasks"]:
+            print("DEBUG: No pending tasks found")
             return {"status": "NO_TASKS", "scheduled_sessions": [], "unschedulable_tasks": []}
 
         # 2. Run solver
         solver_output = solve_schedule(scheduling_request)
+        print(f"DEBUG: Solver returned status {solver_output['status']} with {len(solver_output['scheduled_sessions'])} sessions")
         
         # 3. Update DB: Delete all pending sessions for these tasks
         task_ids = [t["id"] for t in scheduling_request["tasks"]]
@@ -37,6 +42,7 @@ def run_reschedule_pipeline(user_id: str):
             ScheduledSession.task_id.in_(task_ids),
             ScheduledSession.status == "pending"
         ).delete(synchronize_session=False)
+        print(f"DEBUG: Deleted old pending sessions")
 
         # 4. Insert new sessions if solve was successful
         if solver_output["status"] in ("OPTIMAL", "FEASIBLE"):
@@ -48,6 +54,7 @@ def run_reschedule_pipeline(user_id: str):
                     status="pending"
                 )
                 db.add(session)
+            print(f"DEBUG: Inserted {len(solver_output['scheduled_sessions'])} new sessions")
 
         # 5. Generate LLM explanation
         explanation = generate_schedule_explanation(solver_output, scheduling_request["tasks"])
@@ -63,19 +70,6 @@ def run_reschedule_pipeline(user_id: str):
 
 def mark_schedule_dirty(user_id: str):
     """
-    Triggers a reschedule. Prefers async via RQ, falls back to sync if Redis is down.
+    Triggers a reschedule. Synchronous for MVP stability.
     """
-    redis_url = os.environ.get("REDIS_URL")
-    if not redis_url:
-        redis_url = "redis://localhost:6379"
-        
-    try:
-        redis_conn = Redis.from_url(redis_url, socket_connect_timeout=1)
-        # Check connection
-        redis_conn.ping()
-        q = Queue("tempo_jobs", connection=redis_conn)
-        q.enqueue(run_reschedule_pipeline, user_id)
-        logger.info(f"Enqueued reschedule for user {user_id}")
-    except Exception as e:
-        logger.warning(f"Redis unavailable, running reschedule synchronously: {e}")
-        return run_reschedule_pipeline(user_id)
+    return run_reschedule_pipeline(user_id)
