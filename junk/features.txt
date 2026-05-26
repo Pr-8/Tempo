@@ -1,0 +1,17 @@
+There are two kinds of time block occcupiers. 
+    1) events(fixed, assumed completed if in the past)
+    2) tasks(not fixed, assumed not completed if in the pas)
+
+You may add events and tasks. and in case of an event you must give it a time range. the scheduler may not touch the time blocks occupied by events
+that is the time grid redacts time slots containing events or makes another way to not alott anything during that time.
+
+Actions
+    manually move around events and tasks
+    click a button where everything is nuked(except events) and rescheduled while minimising a cost function
+
+
+
+Above is the basic model
+
+Now i want to be able to carry out actions though a chat interface
+I want to be able to set user preferences(like no working out in the afternoon and make specific ) 

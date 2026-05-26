@@ -36,6 +36,25 @@ class ScheduledSession(Base):
 
     task = relationship("Task", back_populates="sessions")
 
+class ChatMessage(Base):
+    __tablename__ = "chat_messages"
+
+    id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
+    role = Column(String)     # "user", "assistant", "tool"
+    content = Column(String)
+    tool_calls = Column(String, nullable=True) # JSON-serialized list of tool calls
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+class UserMemory(Base):
+    __tablename__ = "user_memories"
+
+    id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
+    user_id = Column(String, default="user_1")
+    content = Column(String)    # e.g., "User has football every Thursday at 7pm"
+    memory_type = Column(String) # "constraint", "preference", "context"
+    created_at = Column(DateTime, default=datetime.utcnow)
+    last_referenced_at = Column(DateTime, default=datetime.utcnow)
+
 class UserPreferences(Base):
     __tablename__ = "user_preferences"
 

@@ -56,6 +56,5 @@ def update_preferences(body: PrefsUpdate, db: Session = Depends(get_db)):
     prefs.max_session_mins = body.max_session_mins
     
     db.commit()
-    mark_schedule_dirty(HARDCODED_USER_ID)
     
     return {"ok": True}

@@ -1,11 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import AddTaskForm from './components/AddTaskForm';
 import ScheduleView from './components/ScheduleView';
+import ChatPanel from './components/ChatPanel';
 import client from './api/client';
 
 function App() {
   const [tasks, setTasks] = useState([]);
   const [refreshTrigger, setRefreshTrigger] = useState(0);
+
+  // WebSocket for Real-time updates
+  useEffect(() => {
+    const connectWS = () => {
+      const ws = new WebSocket('ws://localhost:8000/ws');
+      
+      ws.onmessage = (event) => {
+        if (event.data === 'REFRESH') {
+          console.log('Real-time refresh triggered');
+          setRefreshTrigger(prev => prev + 1);
+        }
+      };
+
+      ws.onclose = () => {
+        console.log('WS closed, reconnecting in 3s...');
+        setTimeout(connectWS, 3000);
+      };
+
+      return ws;
+    };
+
+    const socket = connectWS();
+    return () => {
+      socket.onclose = null; // Prevent reconnect on unmount
+      socket.close();
+    };
+  }, []);
 
   const fetchTasks = async () => {
     try {
@@ -21,7 +49,18 @@ function App() {
   }, [refreshTrigger]);
 
   const handleTaskAdded = () => {
+    fetchTasks();
     setRefreshTrigger(prev => prev + 1);
+  };
+
+  const handleReschedule = async () => {
+    try {
+      await client.post('/api/sessions/reschedule');
+      setRefreshTrigger(prev => prev + 1);
+      alert('Reschedule complete!');
+    } catch (err) {
+      alert('Error during reschedule');
+    }
   };
 
   const handleDeleteTask = async (id) => {
@@ -60,8 +99,17 @@ function App() {
       </div>
       
       <div style={{ flex: 1, overflowY: 'auto', backgroundColor: '#fafafa' }}>
+        <div style={{ padding: '20px', display: 'flex', justifyContent: 'flex-end' }}>
+          <button 
+            onClick={handleReschedule}
+            style={{ padding: '10px 20px', backgroundColor: '#111827', color: 'white', borderRadius: '6px', cursor: 'pointer', border: 'none', fontWeight: 'bold' }}
+          >
+            🚀 Schedule (Nuke)
+          </button>
+        </div>
         <ScheduleView key={refreshTrigger} />
       </div>
+      <ChatPanel />
     </div>
   );
 }

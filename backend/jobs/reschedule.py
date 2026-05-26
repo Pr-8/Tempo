@@ -28,21 +28,19 @@ def run_reschedule_pipeline(user_id: str):
             logger.error(f"Error building scheduling request: {e}")
             return None
 
+        # 3. Update DB: Delete all pending sessions for this user
+        db.query(ScheduledSession).filter(
+            ScheduledSession.status == "pending"
+        ).delete(synchronize_session=False)
+        print(f"DEBUG: Deleted all old pending sessions")
+
         if not scheduling_request["tasks"]:
             print("DEBUG: No pending tasks found")
+            db.commit()
             return {"status": "NO_TASKS", "scheduled_sessions": [], "unschedulable_tasks": []}
 
         # 2. Run solver
         solver_output = solve_schedule(scheduling_request)
-        print(f"DEBUG: Solver returned status {solver_output['status']} with {len(solver_output['scheduled_sessions'])} sessions")
-        
-        # 3. Update DB: Delete all pending sessions for these tasks
-        task_ids = [t["id"] for t in scheduling_request["tasks"]]
-        db.query(ScheduledSession).filter(
-            ScheduledSession.task_id.in_(task_ids),
-            ScheduledSession.status == "pending"
-        ).delete(synchronize_session=False)
-        print(f"DEBUG: Deleted old pending sessions")
 
         # 4. Insert new sessions if solve was successful
         if solver_output["status"] in ("OPTIMAL", "FEASIBLE"):
@@ -56,16 +54,23 @@ def run_reschedule_pipeline(user_id: str):
                 db.add(session)
             print(f"DEBUG: Inserted {len(solver_output['scheduled_sessions'])} new sessions")
 
-        # 5. Generate LLM explanation
-        explanation = generate_schedule_explanation(solver_output, scheduling_request["tasks"])
+        # 5. Commit sessions to DB IMMEDIATELY (before potentially slow AI call)
+        db.commit()
 
-        # 6. Update UserPreferences
+        # 6. Generate LLM explanation
+        try:
+            explanation = generate_schedule_explanation(solver_output, scheduling_request["tasks"])
+        except Exception as e:
+            print(f"DEBUG: AI Explanation failed: {e}")
+            explanation = "Schedule updated successfully."
+
+        # 7. Update UserPreferences
         prefs = db.query(UserPreferences).filter_by(user_id=user_id).first()
         if prefs:
             prefs.last_schedule_explanation = explanation
             prefs.schedule_dirty = False
+            db.commit()
             
-        db.commit()
         return solver_output
 
 def mark_schedule_dirty(user_id: str):

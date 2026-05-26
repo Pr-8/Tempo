@@ -15,7 +15,7 @@ def generate_schedule_explanation(solver_output: dict, tasks: list) -> str:
 
     try:
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel("gemini-2.0-flash")
+        model = genai.GenerativeModel("gemini-flash-latest")
 
         task_lookup = {str(t["id"]): t for t in tasks}
         

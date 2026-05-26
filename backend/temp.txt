@@ -1,0 +1,10 @@
+python -c "
+import sqlite3
+import pandas as pd
+conn = sqlite3.connect('tempo_test.db')
+print('\n--- TASKS ---')
+print(pd.read_sql_query('SELECT title, estimated_hours, status, is_fixed FROM tasks', conn))
+print('\n--- SCHEDULED SESSIONS ---')
+print(pd.read_sql_query('SELECT task_id, start_time, end_time FROM scheduled_sessions', conn))
+conn.close()
+"

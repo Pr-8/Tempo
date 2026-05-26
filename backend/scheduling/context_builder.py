@@ -12,26 +12,21 @@ def build_scheduling_request(user_id: str, db: Session) -> dict:
     pending_tasks = db.query(Task).filter(Task.status == "pending").all()
     
     solver_tasks = []
+    now = datetime.now()
     
     for task in pending_tasks:
-        # 3. Compute remaining_hours
-        # Query ScheduledSession for that task_id where status == "complete"
-        completed_sessions = db.query(ScheduledSession).filter(
-            ScheduledSession.task_id == task.id,
-            ScheduledSession.status == "complete"
-        ).all()
+        # User Logic: "assume event done when it goes in the past"
+        if task.is_fixed and task.fixed_end and task.fixed_end < now:
+            task.status = "complete"
+            db.commit()
+            continue
+
+        # 3. Use estimated_hours as remaining_hours
+        # (We now subtract duration directly from estimated_hours when marking sessions done)
+        remaining_hrs = round(task.estimated_hours, 2)
         
-        completed_mins = 0
-        for s in completed_sessions:
-            if s.start_time and s.end_time:
-                duration = s.end_time - s.start_time
-                completed_mins += duration.total_seconds() / 60
-        
-        remaining_hrs = max(0.0, task.estimated_hours - (completed_mins / 60.0))
-        remaining_hrs = round(remaining_hrs, 2)
-        
-        # Skip the task if remaining_hrs <= 0 and it's not a fixed event
-        # Fixed events should be passed regardless of "hours" if they are in the horizon
+        # Standard tasks are not done unless marked done (status == "complete")
+        # Fixed events are passed regardless of hours (if not in past)
         if not task.is_fixed and remaining_hrs <= 0:
             continue
             
