@@ -43,6 +43,9 @@ class TempoScheduler:
         
         break_slots = math.ceil(self.prefs.min_break_minutes / 30)
 
+        # Optimization: Pre-calculate slot penalties for weekend/non-preferred hours
+        slot_penalties = [0 if s.is_preferred else 50000 for s in self.slots]
+
         for task in self.tasks:
             t_id = task.id
             if task.is_fixed:
@@ -66,8 +69,14 @@ class TempoScheduler:
                     })
                 continue
 
+            if not task.is_fixed:
+                deadline_naive = task.deadline.replace(tzinfo=None)
+                if deadline_naive < self.current_time:
+                    print(f"DEBUG: Skipping task {task.title} - deadline in past")
+                    continue
+
             # Flexible Task
-            weight = (6 - task.priority) # Priority 1 (High) -> Weight 5, Priority 5 (Low) -> Weight 1
+            weight = (6 - task.priority)
             durations = split_task_into_sessions(
                 task.remaining_hours, 
                 self.prefs.min_session_minutes, 
@@ -82,6 +91,10 @@ class TempoScheduler:
                 else:
                     break
             
+            if last_possible_slot == -1 and not task.is_fixed:
+                 print(f"DEBUG: No slots available for task {task.title} before deadline")
+                 continue
+
             last_session_end = None
             for s_idx, duration in enumerate(durations):
                 duration_slots = math.ceil(duration / 30)
@@ -92,8 +105,7 @@ class TempoScheduler:
                 interval = self.model.NewOptionalIntervalVar(start_var, duration_slots, end_var, is_sess_scheduled, f"interval_{t_id}_{s_idx}")
                 all_intervals.append(interval)
                 
-                if last_possible_slot != -1:
-                    self.model.Add(end_var <= last_possible_slot + 1).OnlyEnforceIf(is_sess_scheduled)
+                self.model.Add(end_var <= last_possible_slot + 1).OnlyEnforceIf(is_sess_scheduled)
                 
                 if last_session_end is not None:
                     self.model.Add(start_var >= last_session_end + break_slots).OnlyEnforceIf(is_sess_scheduled)
@@ -101,12 +113,19 @@ class TempoScheduler:
                 last_session_end = end_var
 
                 # Penalty for non-preferred slots (Weekend)
-                for i, slot in enumerate(self.slots):
-                    if not slot.is_preferred:
-                        is_on_bad_slot = self.model.NewBoolVar("")
-                        self.model.Add(start_var == i).OnlyEnforceIf(is_on_bad_slot)
-                        self.model.Add(start_var != i).OnlyEnforceIf(is_on_bad_slot.Not())
-                        soft_constraint_penalty_terms.append(is_on_bad_slot * 50000)
+                session_penalty = self.model.NewIntVar(0, 50000, f"penalty_{t_id}_{s_idx}")
+                self.model.AddElement(start_var, slot_penalties, session_penalty)
+                
+                # Penalty only applies if scheduled
+                actual_penalty = self.model.NewIntVar(0, 50000, f"actual_penalty_{t_id}_{s_idx}")
+                self.model.Add(actual_penalty == session_penalty).OnlyEnforceIf(is_sess_scheduled)
+                self.model.Add(actual_penalty == 0).OnlyEnforceIf(is_sess_scheduled.Not())
+                soft_constraint_penalty_terms.append(actual_penalty)
+
+                # Early start penalty only if scheduled
+                actual_start_var = self.model.NewIntVar(0, num_slots, f"actual_start_{t_id}_{s_idx}")
+                self.model.Add(actual_start_var == start_var).OnlyEnforceIf(is_sess_scheduled)
+                self.model.Add(actual_start_var == 0).OnlyEnforceIf(is_sess_scheduled.Not())
 
                 task_sessions_data.append({
                     "task_id": t_id,
@@ -117,7 +136,7 @@ class TempoScheduler:
                     "duration": duration
                 })
                 scheduled_score_terms.append(is_sess_scheduled * weight)
-                early_start_penalty_terms.append(start_var * weight)
+                early_start_penalty_terms.append(actual_start_var * weight)
 
         self.model.AddNoOverlap(all_intervals)
         
@@ -163,8 +182,8 @@ class TempoScheduler:
                     start_time = self.slots[s_idx].dt
                     results.append(ScheduledSession(
                         task_id=sess["task_id"],
-                        start_time=start_time.replace(tzinfo=timezone.utc),
-                        end_time=(start_time + timedelta(minutes=(e_idx - s_idx) * 30)).replace(tzinfo=timezone.utc),
+                        start_time=start_time,
+                        end_time=start_time + timedelta(minutes=(e_idx - s_idx) * 30),
                         duration_minutes=(e_idx - s_idx) * 30
                     ))
         return results

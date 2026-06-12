@@ -1,0 +1,93 @@
+00:12:59 Worker f1eaa36615814eeb86ce6dc021536ad6: started with PID 319534, version 2.9.0
+00:12:59 Worker f1eaa36615814eeb86ce6dc021536ad6: subscribing to channel rq:pubsub:f1eaa36615814eeb86ce6dc021536ad6
+00:12:59 *** Listening on tempo_tasks...
+00:12:59 Worker f1eaa36615814eeb86ce6dc021536ad6: cleaning registries for queue: tempo_tasks
+00:14:35 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+DEBUG: Starting run_scheduling_pipeline
+DEBUG: Found 13 tasks and preferences: True
+DEBUG: Deleted future sessions
+DEBUG: Starting solver...
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Action Task - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Test Task - deadline in past
+DEBUG: Skipping task Nigga - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Action Task - deadline in past
+DEBUG: Skipping task Test Task - deadline in past
+DEBUG: Skipping task Math Study Session - deadline in past
+DEBUG: Solver finished. Found 2 sessions.
+DEBUG: Committed results
+DEBUG: Sent REFRESH signal
+DEBUG: Enqueued explanation job
+00:14:37 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:01.452423s on worker f1eaa36615814eeb86ce6dc021536ad6
+00:14:37 tempo_tasks: Job OK (regenerate_schedule_singleton)
+00:14:37 Result is kept for 500 seconds
+00:14:37 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('c48ff9b0-ef44-40f8-b5d2-be64c19d8c1a'), sta..., solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') (explain_141f4bb8-7cb4-4608-b7d1-37ea1557ee53)
+00:15:19 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('c48ff9b0-ef44-40f8-b5d2-be64c19d8c1a'), sta..., solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') job in 0:00:42.079627s on worker f1eaa36615814eeb86ce6dc021536ad6
+00:15:19 tempo_tasks: Job OK (explain_141f4bb8-7cb4-4608-b7d1-37ea1557ee53)
+00:15:19 Result is kept for 500 seconds
+00:15:19 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+DEBUG: Starting run_scheduling_pipeline
+DEBUG: Found 13 tasks and preferences: True
+DEBUG: Deleted future sessions
+DEBUG: Starting solver...
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Action Task - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Test Task - deadline in past
+DEBUG: Skipping task Nigga - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Action Task - deadline in past
+DEBUG: Skipping task Test Task - deadline in past
+DEBUG: Skipping task Math Study Session - deadline in past
+DEBUG: Solver finished. Found 2 sessions.
+DEBUG: Committed results
+DEBUG: Sent REFRESH signal
+DEBUG: Enqueued explanation job
+00:15:20 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:01.333777s on worker f1eaa36615814eeb86ce6dc021536ad6
+00:15:20 tempo_tasks: Job OK (regenerate_schedule_singleton)
+00:15:20 Result is kept for 500 seconds
+00:15:20 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('c5f802ce-29dd-4329-b134-210881c15d17'), sta..., solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') (explain_1b8e612a-73bc-41ce-950a-693c64ec75f5)
+00:16:02 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('c5f802ce-29dd-4329-b134-210881c15d17'), sta..., solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') job in 0:00:42.400997s on worker f1eaa36615814eeb86ce6dc021536ad6
+00:16:02 tempo_tasks: Job OK (explain_1b8e612a-73bc-41ce-950a-693c64ec75f5)
+00:16:02 Result is kept for 500 seconds
+00:16:02 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+DEBUG: Starting run_scheduling_pipeline
+DEBUG: Found 12 tasks and preferences: True
+DEBUG: Deleted future sessions
+DEBUG: Starting solver...
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Action Task - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Test Task - deadline in past
+DEBUG: Skipping task Nigga - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Action Task - deadline in past
+DEBUG: Skipping task Test Task - deadline in past
+DEBUG: Skipping task Math Study Session - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Solver finished. Found 0 sessions.
+DEBUG: Committed results
+DEBUG: Sent REFRESH signal
+DEBUG: Enqueued explanation job
+00:16:04 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:01.160874s on worker f1eaa36615814eeb86ce6dc021536ad6
+00:16:04 tempo_tasks: Job OK (regenerate_schedule_singleton)
+00:16:04 Result is kept for 500 seconds
+00:16:04 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[], solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') (explain_fb6eda58-4eb0-4ec7-9caf-60d886220c26)
+00:16:46 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[], solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') job in 0:00:42.312453s on worker f1eaa36615814eeb86ce6dc021536ad6
+00:16:46 tempo_tasks: Job OK (explain_fb6eda58-4eb0-4ec7-9caf-60d886220c26)
+00:16:46 Result is kept for 500 seconds
+00:23:31 Worker f1eaa36615814eeb86ce6dc021536ad6: cleaning registries for queue: tempo_tasks
+00:37:01 Worker f1eaa36615814eeb86ce6dc021536ad6: cleaning registries for queue: tempo_tasks
+00:50:31 Worker f1eaa36615814eeb86ce6dc021536ad6: cleaning registries for queue: tempo_tasks
+01:04:01 Worker f1eaa36615814eeb86ce6dc021536ad6: cleaning registries for queue: tempo_tasks
+01:17:32 Worker f1eaa36615814eeb86ce6dc021536ad6: cleaning registries for queue: tempo_tasks

@@ -1,0 +1,245 @@
+INFO:     Will watch for changes in these directories: ['/home/ritwik/Programming/Tempo/backend']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [319535] using StatReload
+INFO:     Started server process [319649]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:57814 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:57822 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57838 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57852 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57860 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57876 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57900 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57892 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57916 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:44700 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:44698 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44712 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44714 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44716 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44732 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44738 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44756 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44754 - "GET /api/tasks/ HTTP/1.1" 200 OK
+DEBUG: Executing tool add_task with args {'estimated_hours': 2, 'is_fixed': False, 'title': 'Math study session', 'priority': 'medium', 'course': 'Math'}
+DEBUG: Executing tool add_task with args {'title': 'Math study session', 'deadline': '2026-06-14', 'course': 'Math', 'priority': 'medium', 'estimated_hours': 2, 'is_fixed': False}
+INFO:     127.0.0.1:50640 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50660 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50654 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50656 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33198 - "PATCH /api/sessions/84d748e5-3bf2-417a-a628-3e36c07e4159/complete HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33214 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33218 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33204 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40650 - "PATCH /api/sessions/5469e504-485b-4f7f-a9ac-3b0c976788b6/complete HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40662 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40678 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40676 - "GET /api/tasks/ HTTP/1.1" 200 OK
+DEBUG: Executing tool add_task with args {'is_fixed': False, 'priority': 'medium', 'course': 'Math', 'title': 'Math Study Task', 'estimated_hours': 2}
+DEBUG: Executing tool add_task with args {'deadline': '2026-06-14', 'course': 'Math', 'estimated_hours': 2, 'priority': 'medium', 'title': 'Math Study Session', 'is_fixed': False}
+INFO:     127.0.0.1:44766 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37352 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37364 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37354 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37370 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37392 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37384 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37408 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37416 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:53522 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53526 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53540 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53552 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53544 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53558 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53580 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53572 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53594 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53602 - "PATCH /api/sessions/258c3a2a-7462-4c47-9edd-b26939c5fd8a/complete HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53606 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53632 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53622 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53634 - "PATCH /api/sessions/d71e988d-dfad-49ac-a9ce-056db952ed7c/complete HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53664 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53636 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53652 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:53676 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53684 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53680 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53702 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53694 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53710 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53734 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53718 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53740 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52174 - "PATCH /api/sessions/b0f0c901-559a-47f5-bd8f-020ee721409d/failed HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52188 - "PATCH /api/sessions/b0f0c901-559a-47f5-bd8f-020ee721409d/failed HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52204 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52230 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52220 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52250 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52244 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52242 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44312 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44342 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44320 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44330 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44348 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44386 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44374 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44362 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49360 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49368 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49376 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49382 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:58246 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     127.0.0.1:58256 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58262 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58264 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58280 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58274 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58292 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58286 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58308 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58316 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53538 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53562 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53550 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:53574 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53590 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53606 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53620 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53616 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53642 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53654 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53636 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53660 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     127.0.0.1:50202 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     127.0.0.1:50216 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50228 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50250 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50260 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50234 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50300 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50286 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50274 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50316 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     127.0.0.1:51774 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     127.0.0.1:51782 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51796 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51804 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51824 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51810 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51838 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51842 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51846 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51850 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     127.0.0.1:44584 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     127.0.0.1:44610 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44600 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44622 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44626 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44620 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44636 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44660 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44644 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44670 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     127.0.0.1:49038 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     127.0.0.1:49058 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49054 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49080 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49078 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49062 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49110 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49084 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49094 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49126 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     127.0.0.1:44830 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:44844 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44856 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44876 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44864 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44892 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44926 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44910 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44894 - "GET /api/sessions/ HTTP/1.1" 200 OK
+DEBUG: Executing tool get_schedule with args {'end_date': '2026-06-20', 'start_date': '2026-06-13'}
+INFO:     127.0.0.1:38254 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:37978 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:37980 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37988 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38012 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37992 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38000 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38032 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38024 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38048 - "GET /api/preferences/ HTTP/1.1" 200 OK
+DEBUG: Executing tool get_schedule with args {'end_date': '2026-06-20', 'start_date': '2026-06-13'}
+INFO:     127.0.0.1:53852 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:37286 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:37292 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37300 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37332 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37330 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37314 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37358 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37352 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:53588 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53596 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53626 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53622 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53612 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53628 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53636 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53642 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53650 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     127.0.0.1:51020 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51034 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51044 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51064 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51050 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51048 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51086 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51070 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51078 - "GET /api/tasks/ HTTP/1.1" 200 OK

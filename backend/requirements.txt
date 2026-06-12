@@ -7,7 +7,7 @@ google-generativeai
 ortools
 redis
 rq
-python-dotenv
+python-dotenv>=0.21.0
 pydantic
 rapidfuzz
-websockets
+websockets<17.0,>=13.0.0

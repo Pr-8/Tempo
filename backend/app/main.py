@@ -1,8 +1,24 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.routes import tasks, preferences, schedule, sessions, chat
+from app.core.ws_manager import manager
 
-app = FastAPI(title="Tempo API")
+import asyncio
+from contextlib import asynccontextmanager
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Startup: Start Redis listener
+    task = asyncio.create_task(manager.listen_and_broadcast())
+    yield
+    # Shutdown: Cancel listener
+    task.cancel()
+    try:
+        await task
+    except asyncio.CancelledError:
+        pass
+
+app = FastAPI(title="Tempo API", lifespan=lifespan)
 
 # CORS middleware
 app.add_middleware(
@@ -19,6 +35,18 @@ app.include_router(preferences.router, prefix="/api")
 app.include_router(schedule.router, prefix="/api")
 app.include_router(sessions.router, prefix="/api")
 app.include_router(chat.router, prefix="/api")
+
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    await manager.connect(websocket)
+    try:
+        while True:
+            # Just keep the connection alive
+            await websocket.receive_text()
+    except WebSocketDisconnect:
+        manager.disconnect(websocket)
+    except Exception:
+        manager.disconnect(websocket)
 
 @app.get("/health")
 def health_check():

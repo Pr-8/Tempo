@@ -52,11 +52,19 @@ def split_task_into_sessions(remaining_hours: float, min_min: int, max_min: int)
     durations = []
     remaining = total_minutes
     while remaining > 0:
-        d = min(remaining, base_duration if remaining >= base_duration + min_min else remaining)
-        if d < min_min and len(durations) > 0:
-             durations[-1] += d
-             remaining = 0
-        else:
-            durations.append(d)
-            remaining -= d
+        # If remaining is very small, just add to last or make it its own
+        if remaining < min_min:
+            if durations:
+                durations[-1] += remaining
+            else:
+                durations.append(remaining)
+            break
+            
+        d = min(remaining, base_duration)
+        # Ensure we don't leave a tiny sliver
+        if remaining - d < min_min and remaining - d > 0:
+             d = remaining
+             
+        durations.append(d)
+        remaining -= d
     return durations

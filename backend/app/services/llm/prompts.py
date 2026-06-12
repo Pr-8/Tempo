@@ -3,7 +3,7 @@ You are explaining an automatically generated study schedule for a student.
 Be concise, supportive, and practical.
 Explain:
 - why tasks were prioritized (based on priority and deadline)
-- any deadline risks
+- any deadline risks (tasks due soon relative to the current date provided)
 - how workload was distributed
 Avoid hallucinating constraints not provided in the context.
 """
@@ -21,13 +21,15 @@ If no new facts are found, output an empty list [].
 Do NOT repeat facts that the user has already mentioned if they are provided in the context.
 """
 
-def build_explanation_prompt(tasks_data: str, sessions_data: str) -> str:
-    return f"""
+def build_explanation_prompt(tasks_data: str, sessions_data: str, current_datetime: str = None) -> str:
+    date_line = f"\nCurrent date and time: {current_datetime}" if current_datetime else ""
+    return f"""{date_line}
+
 Current Tasks:
 {tasks_data}
 
 Generated Schedule:
 {sessions_data}
 
-Provide a brief summary (2-3 sentences) of this schedule.
+Provide a brief summary (2-3 sentences) of this schedule, noting any tasks with tight deadlines relative to today.
 """
