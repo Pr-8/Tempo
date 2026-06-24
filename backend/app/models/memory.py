@@ -2,6 +2,7 @@ import uuid
 from datetime import datetime
 from sqlalchemy import Column, String, DateTime
 from sqlalchemy.dialects.postgresql import UUID
+from pgvector.sqlalchemy import Vector
 from app.models.base import Base
 
 class UserMemory(Base):
@@ -13,3 +14,4 @@ class UserMemory(Base):
     memory_type = Column(String, nullable=False) # "constraint", "preference", "context"
     created_at = Column(DateTime, nullable=False, default=datetime.now)
     last_referenced_at = Column(DateTime, nullable=False, default=datetime.now)
+    embedding = Column(Vector(3072), nullable=True)

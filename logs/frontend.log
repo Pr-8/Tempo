@@ -3,10 +3,47 @@
 > vite
 
 
-  VITE v8.0.13  ready in 400 ms
+  VITE v8.0.13  ready in 268 ms
 
   ➜  Local:   http://localhost:5173/
   ➜  Network: use --host to expose
-10:17:59 PM [vite] (client) hmr update /src/components/ScheduleView.jsx
-10:20:28 PM [vite] (client) hmr update /src/components/ScheduleView.jsx
-10:24:44 PM [vite] (client) hmr update /src/App.jsx
+11:19:20 PM [vite] http proxy error: /api/tasks/
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1193:18)
+    at afterConnectMultiple (node:net:1783:7)
+11:19:20 PM [vite] http proxy error: /api/tasks/
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1193:18)
+    at afterConnectMultiple (node:net:1783:7)
+11:19:20 PM [vite] http proxy error: /api/memories/
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1193:18)
+    at afterConnectMultiple (node:net:1783:7)
+11:19:20 PM [vite] http proxy error: /api/tasks/
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1193:18)
+    at afterConnectMultiple (node:net:1783:7)
+11:19:20 PM [vite] http proxy error: /api/memories/
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1193:18)
+    at afterConnectMultiple (node:net:1783:7)
+11:19:20 PM [vite] http proxy error: /api/sessions/
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1193:18)
+    at afterConnectMultiple (node:net:1783:7)
+11:19:20 PM [vite] http proxy error: /api/preferences/
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1193:18)
+    at afterConnectMultiple (node:net:1783:7)
+11:19:20 PM [vite] http proxy error: /api/sessions/
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1193:18)
+    at afterConnectMultiple (node:net:1783:7)
+11:19:20 PM [vite] http proxy error: /api/tasks/
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1193:18)
+    at afterConnectMultiple (node:net:1783:7)
+11:19:20 PM [vite] http proxy error: /api/preferences/
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1193:18)
+    at afterConnectMultiple (node:net:1783:7)

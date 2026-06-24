@@ -7,6 +7,7 @@ from app.core.config import settings
 from app.core.database import SessionLocal
 from app.models.memory import UserMemory
 from .prompts import MEMORY_EXTRACTION_SYSTEM_PROMPT
+from .embedding import get_embedding
 
 logger = logging.getLogger(__name__)
 
@@ -50,10 +51,12 @@ def extract_memories(user_id: str, message: str, existing_memories: List[str]):
             if any(fact.lower() in m.lower() or m.lower() in fact.lower() for m in existing_memories):
                 continue
                 
+            embedding_result = get_embedding(fact)
             memory = UserMemory(
                 user_id=user_id,
                 content=fact,
-                memory_type="context"
+                memory_type="context",
+                embedding=embedding_result
             )
             db.add(memory)
         

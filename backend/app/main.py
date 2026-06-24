@@ -1,6 +1,6 @@
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
-from app.api.routes import tasks, preferences, schedule, sessions, chat
+from app.api.routes import tasks, preferences, schedule, sessions, chat, memories
 from app.core.ws_manager import manager
 
 import asyncio
@@ -35,6 +35,7 @@ app.include_router(preferences.router, prefix="/api")
 app.include_router(schedule.router, prefix="/api")
 app.include_router(sessions.router, prefix="/api")
 app.include_router(chat.router, prefix="/api")
+app.include_router(memories.router, prefix="/api")
 
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):

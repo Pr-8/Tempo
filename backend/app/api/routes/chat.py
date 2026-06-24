@@ -6,11 +6,13 @@ from datetime import datetime
 import uuid
 
 from app.core.database import get_db
+from app.core.config import settings
 from app.models.chat import ChatMessage
 from app.models.memory import UserMemory
 from app.models.preferences import UserPreferences
 from app.services.llm.gemini import chat_with_tempo
 from app.services.llm.memory_extractor import extract_memories
+from app.services.llm.embedding import get_embedding
 
 router = APIRouter()
 
@@ -31,8 +33,25 @@ def chat(request: ChatRequest, background_tasks: BackgroundTasks, db: Session = 
         history = [{"role": h.role, "content": h.content} for h in reversed(history_objs)]
         
         # 2. Fetch Memories
-        memories = db.query(UserMemory).filter(UserMemory.user_id == request.user_id).all()
-        memory_texts = [m.content for m in memories]
+        query_embedding = get_embedding(request.message)
+        if query_embedding is not None:
+            memories = db.query(UserMemory).filter(
+                UserMemory.user_id == request.user_id,
+                UserMemory.embedding.isnot(None)
+            ).order_by(
+                UserMemory.embedding.cosine_distance(query_embedding)
+            ).limit(settings.MEMORY_TOP_K).all()
+            
+            unembedded = db.query(UserMemory).filter(
+                UserMemory.user_id == request.user_id,
+                UserMemory.embedding.is_(None)
+            ).all()
+            
+            all_memories = memories + unembedded
+            memory_texts = [m.content for m in all_memories]
+        else:
+            memories = db.query(UserMemory).filter(UserMemory.user_id == request.user_id).all()
+            memory_texts = [m.content for m in memories]
         
         # 3. Fetch Preferences
         prefs = db.query(UserPreferences).filter(UserPreferences.user_id == request.user_id).first()

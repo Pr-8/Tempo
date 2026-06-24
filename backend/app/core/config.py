@@ -5,6 +5,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str
     REDIS_URL: str
     PLANNING_HORIZON_DAYS: int = 21
+    MEMORY_TOP_K: int = 10
     
     model_config = SettingsConfigDict(
         env_file=".env", 

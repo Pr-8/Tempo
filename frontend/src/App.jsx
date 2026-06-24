@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import AddTaskForm from './components/AddTaskForm';
 import ScheduleView from './components/ScheduleView';
 import ChatPanel from './components/ChatPanel';
+import MemoryPanel from './components/MemoryPanel';
 import client from './api/client';
 
 /* ── Error Boundary ──────────────────────────────────────── */
@@ -407,6 +408,11 @@ function App() {
                   ))}
                 </div>
               )}
+              
+              {/* Memory Panel */}
+              <div style={{ marginTop: '20px' }}>
+                <MemoryPanel />
+              </div>
             </div>
           </>
         )}
