@@ -132,6 +132,18 @@ function App() {
     setRefreshTrigger(prev => prev + 1);
   };
 
+  const handleClearAllTasks = async () => {
+    if (window.confirm("Are you sure you want to delete all tasks and clear your schedule? This action cannot be undone.")) {
+      try {
+        await client.delete('/api/tasks/');
+        fetchTasks();
+        setRefreshTrigger(prev => prev + 1);
+      } catch (err) {
+        alert("Error clearing tasks: " + (err.response?.data?.detail || err.message));
+      }
+    }
+  };
+
   const handleReschedule = async () => {
     try {
       await client.post('/api/sessions/reschedule');
@@ -254,6 +266,32 @@ function App() {
                 }}>
                   Tasks ({activeTasks.length})
                 </h2>
+                {tasks.length > 0 && (
+                  <button
+                    onClick={handleClearAllTasks}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      color: 'var(--text-tertiary)',
+                      fontSize: 'var(--font-size-xs)',
+                      fontWeight: 'var(--font-weight-medium)',
+                      cursor: 'pointer',
+                      padding: '2px 6px',
+                      borderRadius: 'var(--radius-sm)',
+                      transition: 'color var(--transition-fast), background var(--transition-fast)',
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.color = 'var(--danger)';
+                      e.currentTarget.style.background = 'rgba(248, 113, 113, 0.08)';
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.color = 'var(--text-tertiary)';
+                      e.currentTarget.style.background = 'none';
+                    }}
+                  >
+                    Clear All
+                  </button>
+                )}
               </div>
 
               {activeTasks.length > 0 ? activeTasks.map((task, i) => {

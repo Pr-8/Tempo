@@ -1,8 +1,8 @@
-00:12:59 Worker f1eaa36615814eeb86ce6dc021536ad6: started with PID 319534, version 2.9.0
-00:12:59 Worker f1eaa36615814eeb86ce6dc021536ad6: subscribing to channel rq:pubsub:f1eaa36615814eeb86ce6dc021536ad6
-00:12:59 *** Listening on tempo_tasks...
-00:12:59 Worker f1eaa36615814eeb86ce6dc021536ad6: cleaning registries for queue: tempo_tasks
-00:14:35 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+21:52:35 Worker 829bff66fb7e4eafa8bb34277731d7a4: started with PID 19462, version 2.9.0
+21:52:35 Worker 829bff66fb7e4eafa8bb34277731d7a4: subscribing to channel rq:pubsub:829bff66fb7e4eafa8bb34277731d7a4
+21:52:35 *** Listening on tempo_tasks...
+21:52:35 Worker 829bff66fb7e4eafa8bb34277731d7a4: cleaning registries for queue: tempo_tasks
+21:54:23 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
 DEBUG: Starting run_scheduling_pipeline
 DEBUG: Found 13 tasks and preferences: True
 DEBUG: Deleted future sessions
@@ -10,62 +10,6 @@ DEBUG: Starting solver...
 DEBUG: Skipping task Updated Title - deadline in past
 DEBUG: Skipping task Updated Title - deadline in past
 DEBUG: Skipping task Updated Title - deadline in past
-DEBUG: Skipping task Updated Title - deadline in past
-DEBUG: Skipping task Action Task - deadline in past
-DEBUG: Skipping task Updated Title - deadline in past
-DEBUG: Skipping task Test Task - deadline in past
-DEBUG: Skipping task Nigga - deadline in past
-DEBUG: Skipping task Updated Title - deadline in past
-DEBUG: Skipping task Action Task - deadline in past
-DEBUG: Skipping task Test Task - deadline in past
-DEBUG: Skipping task Math Study Session - deadline in past
-DEBUG: Solver finished. Found 2 sessions.
-DEBUG: Committed results
-DEBUG: Sent REFRESH signal
-DEBUG: Enqueued explanation job
-00:14:37 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:01.452423s on worker f1eaa36615814eeb86ce6dc021536ad6
-00:14:37 tempo_tasks: Job OK (regenerate_schedule_singleton)
-00:14:37 Result is kept for 500 seconds
-00:14:37 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('c48ff9b0-ef44-40f8-b5d2-be64c19d8c1a'), sta..., solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') (explain_141f4bb8-7cb4-4608-b7d1-37ea1557ee53)
-00:15:19 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('c48ff9b0-ef44-40f8-b5d2-be64c19d8c1a'), sta..., solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') job in 0:00:42.079627s on worker f1eaa36615814eeb86ce6dc021536ad6
-00:15:19 tempo_tasks: Job OK (explain_141f4bb8-7cb4-4608-b7d1-37ea1557ee53)
-00:15:19 Result is kept for 500 seconds
-00:15:19 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
-DEBUG: Starting run_scheduling_pipeline
-DEBUG: Found 13 tasks and preferences: True
-DEBUG: Deleted future sessions
-DEBUG: Starting solver...
-DEBUG: Skipping task Updated Title - deadline in past
-DEBUG: Skipping task Updated Title - deadline in past
-DEBUG: Skipping task Updated Title - deadline in past
-DEBUG: Skipping task Updated Title - deadline in past
-DEBUG: Skipping task Action Task - deadline in past
-DEBUG: Skipping task Updated Title - deadline in past
-DEBUG: Skipping task Test Task - deadline in past
-DEBUG: Skipping task Nigga - deadline in past
-DEBUG: Skipping task Updated Title - deadline in past
-DEBUG: Skipping task Action Task - deadline in past
-DEBUG: Skipping task Test Task - deadline in past
-DEBUG: Skipping task Math Study Session - deadline in past
-DEBUG: Solver finished. Found 2 sessions.
-DEBUG: Committed results
-DEBUG: Sent REFRESH signal
-DEBUG: Enqueued explanation job
-00:15:20 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:01.333777s on worker f1eaa36615814eeb86ce6dc021536ad6
-00:15:20 tempo_tasks: Job OK (regenerate_schedule_singleton)
-00:15:20 Result is kept for 500 seconds
-00:15:20 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('c5f802ce-29dd-4329-b134-210881c15d17'), sta..., solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') (explain_1b8e612a-73bc-41ce-950a-693c64ec75f5)
-00:16:02 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('c5f802ce-29dd-4329-b134-210881c15d17'), sta..., solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') job in 0:00:42.400997s on worker f1eaa36615814eeb86ce6dc021536ad6
-00:16:02 tempo_tasks: Job OK (explain_1b8e612a-73bc-41ce-950a-693c64ec75f5)
-00:16:02 Result is kept for 500 seconds
-00:16:02 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
-DEBUG: Starting run_scheduling_pipeline
-DEBUG: Found 12 tasks and preferences: True
-DEBUG: Deleted future sessions
-DEBUG: Starting solver...
-DEBUG: Skipping task Updated Title - deadline in past
-DEBUG: Skipping task Updated Title - deadline in past
-DEBUG: Skipping task Updated Title - deadline in past
 DEBUG: Skipping task Action Task - deadline in past
 DEBUG: Skipping task Updated Title - deadline in past
 DEBUG: Skipping task Test Task - deadline in past
@@ -75,19 +19,317 @@ DEBUG: Skipping task Action Task - deadline in past
 DEBUG: Skipping task Test Task - deadline in past
 DEBUG: Skipping task Math Study Session - deadline in past
 DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Physics Test Prep - deadline in past
 DEBUG: Solver finished. Found 0 sessions.
 DEBUG: Committed results
 DEBUG: Sent REFRESH signal
 DEBUG: Enqueued explanation job
-00:16:04 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:01.160874s on worker f1eaa36615814eeb86ce6dc021536ad6
-00:16:04 tempo_tasks: Job OK (regenerate_schedule_singleton)
-00:16:04 Result is kept for 500 seconds
-00:16:04 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[], solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') (explain_fb6eda58-4eb0-4ec7-9caf-60d886220c26)
-00:16:46 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[], solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') job in 0:00:42.312453s on worker f1eaa36615814eeb86ce6dc021536ad6
-00:16:46 tempo_tasks: Job OK (explain_fb6eda58-4eb0-4ec7-9caf-60d886220c26)
-00:16:46 Result is kept for 500 seconds
-00:23:31 Worker f1eaa36615814eeb86ce6dc021536ad6: cleaning registries for queue: tempo_tasks
-00:37:01 Worker f1eaa36615814eeb86ce6dc021536ad6: cleaning registries for queue: tempo_tasks
-00:50:31 Worker f1eaa36615814eeb86ce6dc021536ad6: cleaning registries for queue: tempo_tasks
-01:04:01 Worker f1eaa36615814eeb86ce6dc021536ad6: cleaning registries for queue: tempo_tasks
-01:17:32 Worker f1eaa36615814eeb86ce6dc021536ad6: cleaning registries for queue: tempo_tasks
+21:54:26 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:02.762717s on worker 829bff66fb7e4eafa8bb34277731d7a4
+21:54:26 tempo_tasks: Job OK (regenerate_schedule_singleton)
+21:54:26 Result is kept for 500 seconds
+21:54:26 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[], solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') (explain_ecc8655e-0f99-48ad-ba6f-228f3e968ce4)
+21:55:11 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[], solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') job in 0:00:44.820108s on worker 829bff66fb7e4eafa8bb34277731d7a4
+21:55:11 tempo_tasks: Job OK (explain_ecc8655e-0f99-48ad-ba6f-228f3e968ce4)
+21:55:11 Result is kept for 500 seconds
+22:06:25 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+DEBUG: Starting run_scheduling_pipeline
+DEBUG: Found 14 tasks and preferences: True
+DEBUG: Deleted future sessions
+DEBUG: Starting solver...
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Action Task - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Test Task - deadline in past
+DEBUG: Skipping task Nigga - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Action Task - deadline in past
+DEBUG: Skipping task Test Task - deadline in past
+DEBUG: Skipping task Math Study Session - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Physics Test Prep - deadline in past
+DEBUG: Solver finished. Found 2 sessions.
+DEBUG: Committed results
+DEBUG: Sent REFRESH signal
+DEBUG: Enqueued explanation job
+22:06:28 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:02.724525s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:06:28 tempo_tasks: Job OK (regenerate_schedule_singleton)
+22:06:28 Result is kept for 500 seconds
+22:06:28 Worker 829bff66fb7e4eafa8bb34277731d7a4: cleaning registries for queue: tempo_tasks
+22:06:28 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('46b77e2f-f060-41c7-a022-1543315e554c'), sta..., solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') (explain_9a73876b-84f0-4505-b8af-764e77892f7d)
+22:07:12 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('46b77e2f-f060-41c7-a022-1543315e554c'), sta..., solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') job in 0:00:43.306127s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:07:12 tempo_tasks: Job OK (explain_9a73876b-84f0-4505-b8af-764e77892f7d)
+22:07:12 Result is kept for 500 seconds
+22:10:21 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+DEBUG: Starting run_scheduling_pipeline
+DEBUG: Found 15 tasks and preferences: True
+DEBUG: Deleted future sessions
+DEBUG: Starting solver...
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Action Task - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Test Task - deadline in past
+DEBUG: Skipping task Nigga - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Action Task - deadline in past
+DEBUG: Skipping task Test Task - deadline in past
+DEBUG: Skipping task Math Study Session - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Physics Test Prep - deadline in past
+DEBUG: Solver finished. Found 4 sessions.
+DEBUG: Committed results
+DEBUG: Sent REFRESH signal
+DEBUG: Enqueued explanation job
+22:10:24 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:02.821770s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:10:24 tempo_tasks: Job OK (regenerate_schedule_singleton)
+22:10:24 Result is kept for 500 seconds
+22:10:24 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('46b77e2f-f060-41c7-a022-1543315e554c'), sta..., solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') (explain_8c393d23-5b44-4e16-805b-7a535587738b)
+22:11:08 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('46b77e2f-f060-41c7-a022-1543315e554c'), sta..., solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') job in 0:00:43.909280s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:11:08 tempo_tasks: Job OK (explain_8c393d23-5b44-4e16-805b-7a535587738b)
+22:11:08 Result is kept for 500 seconds
+22:17:12 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+DEBUG: Starting run_scheduling_pipeline
+DEBUG: Found 15 tasks and preferences: True
+DEBUG: Deleted future sessions
+DEBUG: Starting solver...
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Action Task - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Test Task - deadline in past
+DEBUG: Skipping task Nigga - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Action Task - deadline in past
+DEBUG: Skipping task Test Task - deadline in past
+DEBUG: Skipping task Math Study Session - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Physics Test Prep - deadline in past
+DEBUG: Solver finished. Found 3 sessions.
+DEBUG: Committed results
+DEBUG: Sent REFRESH signal
+DEBUG: Enqueued explanation job
+22:17:13 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:01.427224s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:17:13 tempo_tasks: Job OK (regenerate_schedule_singleton)
+22:17:13 Result is kept for 500 seconds
+22:17:13 Worker 829bff66fb7e4eafa8bb34277731d7a4: cleaning registries for queue: tempo_tasks
+22:17:13 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('327c2b4c-79ea-4dd2-9113-3e526b050038'), sta..., solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') (explain_2990ba37-1dc4-422c-8757-ed700a98e7d3)
+22:17:56 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('327c2b4c-79ea-4dd2-9113-3e526b050038'), sta..., solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') job in 0:00:42.636139s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:17:56 tempo_tasks: Job OK (explain_2990ba37-1dc4-422c-8757-ed700a98e7d3)
+22:17:56 Result is kept for 500 seconds
+22:17:56 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+DEBUG: Starting run_scheduling_pipeline
+DEBUG: Found 15 tasks and preferences: True
+DEBUG: Deleted future sessions
+DEBUG: Starting solver...
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Action Task - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Test Task - deadline in past
+DEBUG: Skipping task Nigga - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Action Task - deadline in past
+DEBUG: Skipping task Test Task - deadline in past
+DEBUG: Skipping task Math Study Session - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Physics Test Prep - deadline in past
+DEBUG: Solver finished. Found 3 sessions.
+DEBUG: Committed results
+DEBUG: Sent REFRESH signal
+DEBUG: Enqueued explanation job
+22:17:57 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:01.540765s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:17:57 tempo_tasks: Job OK (regenerate_schedule_singleton)
+22:17:57 Result is kept for 500 seconds
+22:17:57 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('327c2b4c-79ea-4dd2-9113-3e526b050038'), sta..., solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') (explain_de1f59ce-dcf8-43bc-b05b-001b94b41f2d)
+22:18:40 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('327c2b4c-79ea-4dd2-9113-3e526b050038'), sta..., solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') job in 0:00:42.872762s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:18:40 tempo_tasks: Job OK (explain_de1f59ce-dcf8-43bc-b05b-001b94b41f2d)
+22:18:40 Result is kept for 500 seconds
+22:21:52 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+DEBUG: Starting run_scheduling_pipeline
+DEBUG: Found 15 tasks and preferences: True
+DEBUG: Deleted future sessions
+DEBUG: Starting solver...
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Action Task - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Test Task - deadline in past
+DEBUG: Skipping task Nigga - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Action Task - deadline in past
+DEBUG: Skipping task Test Task - deadline in past
+DEBUG: Skipping task Math Study Session - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Physics Test Prep - deadline in past
+DEBUG: Solver finished. Found 3 sessions.
+DEBUG: Committed results
+DEBUG: Sent REFRESH signal
+DEBUG: Enqueued explanation job
+22:21:54 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:01.489222s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:21:54 tempo_tasks: Job OK (regenerate_schedule_singleton)
+22:21:54 Result is kept for 500 seconds
+22:21:54 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('327c2b4c-79ea-4dd2-9113-3e526b050038'), sta..., solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') (explain_6bbfeae4-61d7-411d-82cd-0993af732006)
+22:22:36 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('327c2b4c-79ea-4dd2-9113-3e526b050038'), sta..., solver_tasks=[SolverTask(id=UUID('008156a4-9406-476e-9294-23751a9fa237'), title='Updated..., user_id='user_1') job in 0:00:42.509167s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:22:36 tempo_tasks: Job OK (explain_6bbfeae4-61d7-411d-82cd-0993af732006)
+22:22:36 Result is kept for 500 seconds
+22:22:36 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+DEBUG: Starting run_scheduling_pipeline
+DEBUG: Found 11 tasks and preferences: True
+DEBUG: Deleted future sessions
+DEBUG: Starting solver...
+DEBUG: Skipping task Study Linear Algebra - deadline in past
+DEBUG: Skipping task Action Task - deadline in past
+DEBUG: Skipping task Biology Lab Report - deadline in past
+DEBUG: Skipping task Read History Chapter 4 - deadline in past
+DEBUG: Skipping task Nigga - deadline in past
+DEBUG: Skipping task Test Task - deadline in past
+DEBUG: Skipping task Math Study Session - deadline in past
+DEBUG: Skipping task Physics Test Prep - deadline in past
+DEBUG: Solver finished. Found 3 sessions.
+DEBUG: Committed results
+DEBUG: Sent REFRESH signal
+DEBUG: Enqueued explanation job
+22:22:38 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:01.462291s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:22:38 tempo_tasks: Job OK (regenerate_schedule_singleton)
+22:22:38 Result is kept for 500 seconds
+22:22:38 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('327c2b4c-79ea-4dd2-9113-3e526b050038'), sta..., solver_tasks=[SolverTask(id=UUID('327c2b4c-79ea-4dd2-9113-3e526b050038'), title='Math As..., user_id='user_1') (explain_ed492e6a-f40d-43a5-bf46-62987f301da8)
+22:23:21 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('327c2b4c-79ea-4dd2-9113-3e526b050038'), sta..., solver_tasks=[SolverTask(id=UUID('327c2b4c-79ea-4dd2-9113-3e526b050038'), title='Math As..., user_id='user_1') job in 0:00:42.781476s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:23:21 tempo_tasks: Job OK (explain_ed492e6a-f40d-43a5-bf46-62987f301da8)
+22:23:21 Result is kept for 500 seconds
+22:23:21 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+DEBUG: Starting run_scheduling_pipeline
+DEBUG: Found 9 tasks and preferences: True
+DEBUG: Deleted future sessions
+DEBUG: Starting solver...
+DEBUG: Skipping task Study Linear Algebra - deadline in past
+DEBUG: Skipping task Biology Lab Report - deadline in past
+DEBUG: Skipping task Read History Chapter 4 - deadline in past
+DEBUG: Skipping task Nigga - deadline in past
+DEBUG: Skipping task Math Study Session - deadline in past
+DEBUG: Skipping task Physics Test Prep - deadline in past
+DEBUG: Solver finished. Found 3 sessions.
+DEBUG: Committed results
+DEBUG: Sent REFRESH signal
+DEBUG: Enqueued explanation job
+22:23:22 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:01.532378s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:23:22 tempo_tasks: Job OK (regenerate_schedule_singleton)
+22:23:22 Result is kept for 500 seconds
+22:23:22 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('327c2b4c-79ea-4dd2-9113-3e526b050038'), sta..., solver_tasks=[SolverTask(id=UUID('327c2b4c-79ea-4dd2-9113-3e526b050038'), title='Math As..., user_id='user_1') (explain_50b9c912-013c-44c6-a862-24ca8ebd7d1b)
+22:24:05 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('327c2b4c-79ea-4dd2-9113-3e526b050038'), sta..., solver_tasks=[SolverTask(id=UUID('327c2b4c-79ea-4dd2-9113-3e526b050038'), title='Math As..., user_id='user_1') job in 0:00:42.615602s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:24:05 tempo_tasks: Job OK (explain_50b9c912-013c-44c6-a862-24ca8ebd7d1b)
+22:24:05 Result is kept for 500 seconds
+22:25:27 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+DEBUG: Starting run_scheduling_pipeline
+DEBUG: Found 0 tasks and preferences: True
+DEBUG: Deleted future sessions
+DEBUG: Starting solver...
+DEBUG: Solver finished. Found 0 sessions.
+DEBUG: Committed results
+DEBUG: Sent REFRESH signal
+DEBUG: Enqueued explanation job
+22:25:29 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:01.372537s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:25:29 tempo_tasks: Job OK (regenerate_schedule_singleton)
+22:25:29 Result is kept for 500 seconds
+22:25:29 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[], solver_tasks=[], user_id='user_1') (explain_bd5056a5-8cee-4e3a-9a62-5de1babcbd0c)
+22:26:11 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[], solver_tasks=[], user_id='user_1') job in 0:00:42.223244s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:26:11 tempo_tasks: Job OK (explain_bd5056a5-8cee-4e3a-9a62-5de1babcbd0c)
+22:26:11 Result is kept for 500 seconds
+22:26:11 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+DEBUG: Starting run_scheduling_pipeline
+DEBUG: Found 4 tasks and preferences: True
+DEBUG: Deleted future sessions
+DEBUG: Starting solver...
+DEBUG: Skipping task Study Linear Algebra - deadline in past
+DEBUG: Skipping task Biology Lab Report - deadline in past
+DEBUG: Skipping task Read History Chapter 4 - deadline in past
+DEBUG: Solver finished. Found 0 sessions.
+DEBUG: Committed results
+DEBUG: Sent REFRESH signal
+DEBUG: Enqueued explanation job
+22:26:12 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:01.218178s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:26:12 tempo_tasks: Job OK (regenerate_schedule_singleton)
+22:26:12 Result is kept for 500 seconds
+22:26:12 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[], solver_tasks=[SolverTask(id=UUID('5a502d69-f04a-4a02-8385-167695a384b2'), title='Study L..., user_id='user_1') (explain_591fe47d-2fb4-458a-9736-19cff9c54c4e)
+22:26:55 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[], solver_tasks=[SolverTask(id=UUID('5a502d69-f04a-4a02-8385-167695a384b2'), title='Study L..., user_id='user_1') job in 0:00:43.064598s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:26:55 tempo_tasks: Job OK (explain_591fe47d-2fb4-458a-9736-19cff9c54c4e)
+22:26:55 Result is kept for 500 seconds
+22:29:24 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+DEBUG: Starting run_scheduling_pipeline
+DEBUG: Found 5 tasks and preferences: True
+DEBUG: Deleted future sessions
+DEBUG: Starting solver...
+DEBUG: Skipping task Study Linear Algebra - deadline in past
+DEBUG: Skipping task Biology Lab Report - deadline in past
+DEBUG: Skipping task Read History Chapter 4 - deadline in past
+DEBUG: Solver finished. Found 8 sessions.
+DEBUG: Committed results
+DEBUG: Sent REFRESH signal
+DEBUG: Enqueued explanation job
+22:29:26 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:01.824407s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:29:26 tempo_tasks: Job OK (regenerate_schedule_singleton)
+22:29:26 Result is kept for 500 seconds
+22:29:26 Worker 829bff66fb7e4eafa8bb34277731d7a4: cleaning registries for queue: tempo_tasks
+22:29:26 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('2b50f2f9-be55-4cb3-954b-19ba2e75e48f'), sta..., solver_tasks=[SolverTask(id=UUID('5a502d69-f04a-4a02-8385-167695a384b2'), title='Study L..., user_id='user_1') (explain_c6f42d8b-d76b-4fbc-b38a-16eb219853c1)
+22:30:09 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('2b50f2f9-be55-4cb3-954b-19ba2e75e48f'), sta..., solver_tasks=[SolverTask(id=UUID('5a502d69-f04a-4a02-8385-167695a384b2'), title='Study L..., user_id='user_1') job in 0:00:42.526583s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:30:09 tempo_tasks: Job OK (explain_c6f42d8b-d76b-4fbc-b38a-16eb219853c1)
+22:30:09 Result is kept for 500 seconds
+22:30:53 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+DEBUG: Starting run_scheduling_pipeline
+DEBUG: Found 5 tasks and preferences: True
+DEBUG: Deleted future sessions
+DEBUG: Starting solver...
+DEBUG: Skipping task Study Linear Algebra - deadline in past
+DEBUG: Skipping task Biology Lab Report - deadline in past
+DEBUG: Skipping task Read History Chapter 4 - deadline in past
+DEBUG: Solver finished. Found 7 sessions.
+DEBUG: Committed results
+DEBUG: Sent REFRESH signal
+DEBUG: Enqueued explanation job
+22:30:54 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:01.731431s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:30:54 tempo_tasks: Job OK (regenerate_schedule_singleton)
+22:30:54 Result is kept for 500 seconds
+22:30:54 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('2b50f2f9-be55-4cb3-954b-19ba2e75e48f'), sta..., solver_tasks=[SolverTask(id=UUID('5a502d69-f04a-4a02-8385-167695a384b2'), title='Study L..., user_id='user_1') (explain_36bd678c-cc71-4e80-8cf2-d150fc6df510)
+22:31:38 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('2b50f2f9-be55-4cb3-954b-19ba2e75e48f'), sta..., solver_tasks=[SolverTask(id=UUID('5a502d69-f04a-4a02-8385-167695a384b2'), title='Study L..., user_id='user_1') job in 0:00:43.738202s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:31:38 tempo_tasks: Job OK (explain_36bd678c-cc71-4e80-8cf2-d150fc6df510)
+22:31:38 Result is kept for 500 seconds
+22:35:01 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+DEBUG: Starting run_scheduling_pipeline
+DEBUG: Found 4 tasks and preferences: True
+DEBUG: Deleted future sessions
+DEBUG: Starting solver...
+DEBUG: Skipping task Study Linear Algebra - deadline in past
+DEBUG: Skipping task Biology Lab Report - deadline in past
+DEBUG: Skipping task Read History Chapter 4 - deadline in past
+DEBUG: Solver finished. Found 0 sessions.
+DEBUG: Committed results
+DEBUG: Sent REFRESH signal
+DEBUG: Enqueued explanation job
+22:35:03 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:01.204145s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:35:03 tempo_tasks: Job OK (regenerate_schedule_singleton)
+22:35:03 Result is kept for 500 seconds
+22:35:03 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[], solver_tasks=[SolverTask(id=UUID('5a502d69-f04a-4a02-8385-167695a384b2'), title='Study L..., user_id='user_1') (explain_63638c55-a0fb-460f-b5e8-fee68cff552f)
+22:35:47 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[], solver_tasks=[SolverTask(id=UUID('5a502d69-f04a-4a02-8385-167695a384b2'), title='Study L..., user_id='user_1') job in 0:00:43.966311s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:35:47 tempo_tasks: Job OK (explain_63638c55-a0fb-460f-b5e8-fee68cff552f)
+22:35:47 Result is kept for 500 seconds
+22:35:47 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+DEBUG: Starting run_scheduling_pipeline
+DEBUG: Found 0 tasks and preferences: True
+DEBUG: Deleted future sessions
+DEBUG: Starting solver...
+DEBUG: Solver finished. Found 0 sessions.
+DEBUG: Committed results
+DEBUG: Sent REFRESH signal
+DEBUG: Enqueued explanation job
+22:35:48 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:01.123974s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:35:48 tempo_tasks: Job OK (regenerate_schedule_singleton)
+22:35:48 Result is kept for 500 seconds
+22:35:48 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[], solver_tasks=[], user_id='user_1') (explain_1cf2df90-33b8-4998-a678-e3f57cca8e2d)
+22:36:30 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[], solver_tasks=[], user_id='user_1') job in 0:00:42.314914s on worker 829bff66fb7e4eafa8bb34277731d7a4
+22:36:30 tempo_tasks: Job OK (explain_1cf2df90-33b8-4998-a678-e3f57cca8e2d)
+22:36:30 Result is kept for 500 seconds

@@ -361,23 +361,25 @@ export default function ScheduleView({ refreshTrigger }) {
                   >
                     ✓ Done
                   </button>
-                  <button
-                    onClick={(e) => { e.stopPropagation(); handleFailed(session.id); }}
-                    onMouseEnter={() => setHoveredBtn(failKey)}
-                    onMouseLeave={() => setHoveredBtn(null)}
-                    style={{
-                      ...failedPillStyle,
-                      ...(hoveredBtn === failKey ? {
-                        background: '#f87171',
-                        color: 'var(--bg-base)',
-                        borderColor: '#f87171',
-                        transform: 'scale(1.05)',
-                        boxShadow: '0 0 8px rgba(248, 113, 113, 0.4)',
-                      } : {}),
-                    }}
-                  >
-                    ✗ Failed
-                  </button>
+                  {new Date(session.start_time) <= new Date() && (
+                    <button
+                      onClick={(e) => { e.stopPropagation(); handleFailed(session.id); }}
+                      onMouseEnter={() => setHoveredBtn(failKey)}
+                      onMouseLeave={() => setHoveredBtn(null)}
+                      style={{
+                        ...failedPillStyle,
+                        ...(hoveredBtn === failKey ? {
+                          background: '#f87171',
+                          color: 'var(--bg-base)',
+                          borderColor: '#f87171',
+                          transform: 'scale(1.05)',
+                          boxShadow: '0 0 8px rgba(248, 113, 113, 0.4)',
+                        } : {}),
+                      }}
+                    >
+                      ✗ Failed
+                    </button>
+                  )}
                 </div>
               </div>
             );

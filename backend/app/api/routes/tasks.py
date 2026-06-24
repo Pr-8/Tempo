@@ -63,3 +63,16 @@ def delete_task(task_id: UUID, db: Session = Depends(get_db)):
     db.commit()
     enqueue_regeneration()
     return {"status": "ok"}
+
+@router.delete("/")
+def delete_all_tasks(db: Session = Depends(get_db)):
+    try:
+        from app.models.session import Session as SessionModel
+        db.query(SessionModel).delete()
+        db.query(TaskModel).delete()
+        db.commit()
+        enqueue_regeneration()
+        return {"status": "ok"}
+    except Exception as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=str(e))
