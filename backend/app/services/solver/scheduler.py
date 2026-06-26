@@ -3,15 +3,17 @@ from datetime import datetime, timedelta, timezone
 from typing import List, Dict, Optional
 from uuid import UUID
 import math
+import itertools
 
-from .models import SolverTask, SolverPreferences, ScheduledSession, Slot
+from .models import SolverTask, SolverPreferences, ScheduledSession, Slot, CalendarBlock
 from .utils import get_slots, split_task_into_sessions
 
 class TempoScheduler:
-    def __init__(self, tasks: List[SolverTask], prefs: SolverPreferences, current_time: datetime):
+    def __init__(self, tasks: List[SolverTask], prefs: SolverPreferences, current_time: datetime, calendar_blocks: List[CalendarBlock] = None):
         self.tasks = tasks
         self.prefs = prefs
         self.current_time = current_time.replace(tzinfo=None) # Work with naive datetimes internally
+        self.calendar_blocks = calendar_blocks or []
         self.slots = get_slots(
             self.current_time, 
             self.prefs.planning_horizon_days,
@@ -36,6 +38,32 @@ class TempoScheduler:
 
         num_slots = len(self.slots)
         all_intervals = []
+
+        # Map calendar blocks to slot indices and add as fixed intervals
+        overlapping_indices = []
+        for block in self.calendar_blocks:
+            for s in self.slots:
+                # Check overlap: slot start < block end AND slot end > block start
+                slot_start = s.dt
+                slot_end = s.dt + timedelta(minutes=30)
+                if slot_start < block.end_time and slot_end > block.start_time:
+                    overlapping_indices.append(s.index)
+        
+        overlapping_indices = sorted(list(set(overlapping_indices)))
+        
+        for k, g in itertools.groupby(enumerate(overlapping_indices), lambda ix: ix[0] - ix[1]):
+            group = list(map(lambda x: x[1], g))
+            if group:
+                min_idx = group[0]
+                duration_slots = len(group)
+                interval = self.model.NewIntervalVar(
+                    min_idx, 
+                    duration_slots, 
+                    min_idx + duration_slots, 
+                    f"gcal_block_{min_idx}_{duration_slots}"
+                )
+                all_intervals.append(interval)
+
         task_sessions_data = []
         scheduled_score_terms = []
         early_start_penalty_terms = []

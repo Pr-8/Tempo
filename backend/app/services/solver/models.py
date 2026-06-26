@@ -35,3 +35,9 @@ class ScheduledSession(BaseModel):
     start_time: datetime
     end_time: datetime
     duration_minutes: int
+
+class CalendarBlock(BaseModel):
+    start_time: datetime
+    end_time: datetime
+    summary: Optional[str] = None
+

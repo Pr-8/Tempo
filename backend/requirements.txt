@@ -12,3 +12,7 @@ pydantic
 rapidfuzz
 websockets<17.0,>=13.0.0
 pgvector
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+google-api-python-client

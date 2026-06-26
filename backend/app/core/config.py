@@ -6,6 +6,9 @@ class Settings(BaseSettings):
     REDIS_URL: str
     PLANNING_HORIZON_DAYS: int = 21
     MEMORY_TOP_K: int = 10
+    GOOGLE_CLIENT_ID: str = ""
+    GOOGLE_CLIENT_SECRET: str = ""
+    GOOGLE_REDIRECT_URI: str = "http://localhost:8000/api/calendar/callback"
     
     model_config = SettingsConfigDict(
         env_file=".env", 

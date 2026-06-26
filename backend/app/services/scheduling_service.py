@@ -7,8 +7,11 @@ from app.models.task import Task as TaskModel
 from app.models.session import Session as SessionModel
 from app.models.preferences import UserPreferences as PreferencesModel
 from app.models.schedule import ScheduleRun
+from app.models.google_token import GoogleCalendarToken
+from app.models.calendar_event import CalendarEvent
 from app.services.solver.scheduler import TempoScheduler
-from app.services.solver.models import SolverTask, SolverPreferences
+from app.services.solver.models import SolverTask, SolverPreferences, CalendarBlock
+from app.services.google_calendar import GoogleCalendarService
 from app.services.llm.gemini import generate_schedule_explanation
 from app.core.ws_manager import manager
 
@@ -69,13 +72,39 @@ def run_scheduling_pipeline(db: Session):
     ).delete()
     print("DEBUG: Deleted future sessions")
     
+    # 2.5. Retrieve Google Calendar blocking events if sync is enabled
+    calendar_blocks = []
+    token = db.query(GoogleCalendarToken).filter_by(user_id="user_1", sync_enabled=True).first()
+    if token:
+        try:
+            gcal = GoogleCalendarService(db)
+            horizon_end = now + timedelta(days=solver_prefs.planning_horizon_days)
+            gcal.pull_events("user_1", now, horizon_end)
+            db_blocks = db.query(CalendarEvent).filter(
+                CalendarEvent.user_id == "user_1",
+                CalendarEvent.source == "google",
+                CalendarEvent.start_time >= now,
+                CalendarEvent.start_time < horizon_end
+            ).all()
+            calendar_blocks = [
+                CalendarBlock(
+                    start_time=b.start_time,
+                    end_time=b.end_time,
+                    summary=b.summary
+                ) for b in db_blocks
+            ]
+            print(f"DEBUG: Pulled {len(calendar_blocks)} calendar blocks")
+        except Exception as e:
+            print(f"DEBUG: Calendar sync failed (non-fatal): {e}")
+
     # 3. Run Solver
     print("DEBUG: Starting solver...")
-    scheduler = TempoScheduler(solver_tasks, solver_prefs, now)
+    scheduler = TempoScheduler(solver_tasks, solver_prefs, now, calendar_blocks=calendar_blocks)
     scheduled_sessions = scheduler.solve()
     print(f"DEBUG: Solver finished. Found {len(scheduled_sessions)} sessions.")
     
     # 4. Save results
+    db_sessions = []
     for s in scheduled_sessions:
         db_session = SessionModel(
             task_id=s.task_id,
@@ -86,6 +115,7 @@ def run_scheduling_pipeline(db: Session):
             created_at=now
         )
         db.add(db_session)
+        db_sessions.append(db_session)
     
     # 5. Finalize main transaction BEFORE calling LLM
     run.completed_at = datetime.now()
@@ -95,6 +125,16 @@ def run_scheduling_pipeline(db: Session):
     
     db.commit()
     print("DEBUG: Committed results")
+
+    # 5.5. Push sessions to Google Calendar if sync is enabled
+    if token:
+        try:
+            gcal = GoogleCalendarService(db)
+            task_map = {t.id: t for t in tasks}
+            gcal.push_sessions("user_1", db_sessions, task_map)
+            print("DEBUG: Pushed sessions to Google Calendar")
+        except Exception as e:
+            print(f"DEBUG: Failed to push sessions to Google Calendar: {e}")
     
     # 6. Notify Frontend (Early Refresh)
     try:

@@ -1,143 +1,100 @@
 INFO:     Will watch for changes in these directories: ['/home/ritwik/Programming/Tempo/backend']
 INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [41128] using StatReload
-INFO:     Started server process [41279]
+INFO:     Started reloader process [15844] using StatReload
+INFO:     Started server process [15974]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     127.0.0.1:54132 - "WebSocket /ws" [accepted]
-INFO:     connection open
-INFO:     127.0.0.1:50132 - "GET /api/sessions/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50144 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50162 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50158 - "GET /api/preferences/ HTTP/1.1" 200 OK
-DEBUG: Executing tool update_preference with args {'key': 'day_end', 'value': '20:00'}
-DEBUG: Executing tool update_preference with args {'key': 'day_end', 'value': '20'}
-INFO:     127.0.0.1:54128 - "POST /api/chat HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55078 - "GET /api/sessions/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55080 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55086 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55088 - "GET /api/preferences/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35758 - "GET /api/sessions/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35770 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35784 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35778 - "GET /api/preferences/ HTTP/1.1" 200 OK
-DEBUG: Executing tool update_preference with args {'value': '20:00', 'key': 'day_end'}
-DEBUG: Executing tool update_preference with args {'value': '20', 'key': 'day_end'}
-DEBUG: Executing tool add_task with args {'title': 'Optimization problem set', 'estimated_hours': 8, 'deadline': '2026-06-26', 'is_fixed': False, 'priority': 'high'}
-INFO:     127.0.0.1:35752 - "POST /api/chat HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55234 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55218 - "GET /api/sessions/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55246 - "GET /api/preferences/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55256 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     connection closed
-INFO:     127.0.0.1:57500 - "WebSocket /ws" [accepted]
-INFO:     connection open
-INFO:     127.0.0.1:57490 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57492 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57534 - "GET /api/preferences/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57522 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57514 - "GET /api/sessions/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57550 - "GET /api/memories/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57564 - "GET /api/memories/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57568 - "GET /api/sessions/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57596 - "GET /api/preferences/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57582 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45148 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45134 - "GET /api/sessions/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45158 - "GET /api/preferences/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45162 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     connection closed
-INFO:     127.0.0.1:55006 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55016 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55030 - "WebSocket /ws" [accepted]
-INFO:     connection open
-INFO:     127.0.0.1:55044 - "GET /api/sessions/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55054 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55056 - "GET /api/preferences/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55070 - "GET /api/memories/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55074 - "GET /api/memories/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55082 - "GET /api/sessions/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55102 - "GET /api/preferences/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55094 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     connection closed
-INFO:     127.0.0.1:58734 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58742 - "WebSocket /ws" [accepted]
-INFO:     connection open
-INFO:     127.0.0.1:58746 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58748 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58764 - "GET /api/memories/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58756 - "GET /api/memories/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58780 - "GET /api/sessions/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58792 - "GET /api/sessions/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58808 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58814 - "GET /api/preferences/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58830 - "GET /api/preferences/ HTTP/1.1" 200 OK
-DEBUG: Executing tool block_time with args {'reason': 'User is occupied.', 'date': '2026-06-28'}
-INFO:     127.0.0.1:56622 - "POST /api/chat HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48588 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48582 - "GET /api/sessions/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48596 - "GET /api/preferences/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48610 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51338 - "GET /api/sessions/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51342 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51354 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51366 - "GET /api/preferences/ HTTP/1.1" 200 OK
-INFO:     connection closed
-INFO:     127.0.0.1:57484 - "WebSocket /ws" [accepted]
-INFO:     connection open
-INFO:     127.0.0.1:57502 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57494 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57514 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57550 - "GET /api/memories/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57552 - "GET /api/preferences/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57524 - "GET /api/memories/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57534 - "GET /api/sessions/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57554 - "GET /api/sessions/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57562 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57576 - "GET /api/preferences/ HTTP/1.1" 200 OK
-DEBUG: Executing tool get_schedule with args {'start_date': '2026-06-25', 'end_date': '2026-06-26'}
-DEBUG: Executing tool add_task with args {'title': 'CANCELLED Optimization problem set', 'priority': 'high', 'is_fixed': False}
-INFO:     127.0.0.1:46970 - "POST /api/chat HTTP/1.1" 200 OK
-INFO:     connection closed
-INFO:     127.0.0.1:57074 - "WebSocket /ws" [accepted]
+INFO:     127.0.0.1:56170 - "WebSocket /ws" [accepted]
 INFO:     connection open
 INFO:     connection closed
-INFO:     127.0.0.1:57082 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57088 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57096 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57134 - "GET /api/memories/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57122 - "GET /api/sessions/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57148 - "GET /api/preferences/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57110 - "GET /api/memories/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57160 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57156 - "GET /api/sessions/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57174 - "GET /api/preferences/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57188 - "WebSocket /ws" [accepted]
+INFO:     127.0.0.1:56184 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56190 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56196 - "GET /api/calendar/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56208 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56242 - "GET /api/calendar/events?start=2026-06-19T21:19:31.924Z&end=2026-07-26T21:19:31.924Z HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56194 - "GET /api/memories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56248 - "GET /api/memories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56216 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56232 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56250 - "GET /api/calendar/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56254 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56286 - "GET /api/calendar/events?start=2026-06-19T21:19:31.949Z&end=2026-07-26T21:19:31.949Z HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56284 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56270 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56302 - "WebSocket /ws" [accepted]
 INFO:     connection open
-DEBUG: Executing tool get_schedule with args {'start_date': '2026-06-25', 'end_date': '2026-06-26'}
-DEBUG: Executing tool add_task with args {'priority': 'low', 'title': 'dummy_to_clear_optimization', 'is_fixed': False}
-DEBUG: Executing tool get_schedule with args {'start_date': '2026-06-25', 'end_date': '2026-06-26'}
-INFO:     127.0.0.1:35596 - "POST /api/chat HTTP/1.1" 200 OK
 INFO:     connection closed
-INFO:     127.0.0.1:50902 - "WebSocket /ws" [accepted]
+INFO:     127.0.0.1:43500 - "WebSocket /ws" [accepted]
 INFO:     connection open
-INFO:     127.0.0.1:50916 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50912 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50924 - "GET /api/memories/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50928 - "GET /api/sessions/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50932 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50954 - "GET /api/preferences/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50948 - "GET /api/memories/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50970 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50982 - "GET /api/preferences/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50956 - "GET /api/sessions/ HTTP/1.1" 200 OK
-DEBUG: Executing tool add_task with args {'estimated_hours': 3, 'title': 'Calculus assignment', 'is_fixed': False, 'deadline': '2026-07-03', 'priority': 'medium', 'course': 'Calculus'}
-INFO:     127.0.0.1:42146 - "POST /api/chat HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42158 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42148 - "GET /api/sessions/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42162 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42172 - "GET /api/preferences/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41402 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41388 - "GET /api/tasks/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41374 - "GET /api/sessions/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41414 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43506 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43514 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43528 - "GET /api/calendar/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43520 - "GET /api/memories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43532 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43552 - "GET /api/calendar/events?start=2026-06-19T21:20:36.188Z&end=2026-07-26T21:20:36.188Z HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43554 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43566 - "GET /api/calendar/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43546 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43560 - "GET /api/memories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43568 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43586 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43572 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43600 - "GET /api/calendar/events?start=2026-06-19T21:20:36.212Z&end=2026-07-26T21:20:36.212Z HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37714 - "POST /api/sessions/reschedule HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37720 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37742 - "GET /api/calendar/events?start=2026-06-19T21:57:53.109Z&end=2026-07-26T21:57:53.109Z HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37750 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37730 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37758 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60000 - "POST /api/calendar/sync HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60002 - "GET /api/calendar/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36588 - "POST /api/sessions/reschedule HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36596 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36626 - "GET /api/calendar/events?start=2026-06-19T21:58:10.395Z&end=2026-07-26T21:58:10.395Z HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36612 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36644 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36638 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36654 - "POST /api/sessions/reschedule HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36666 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36704 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36682 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36692 - "GET /api/calendar/events?start=2026-06-19T21:58:11.167Z&end=2026-07-26T21:58:11.167Z HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36684 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36706 - "POST /api/sessions/reschedule HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36716 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36720 - "GET /api/calendar/events?start=2026-06-19T21:58:11.599Z&end=2026-07-26T21:58:11.599Z HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36734 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36710 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36738 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36740 - "POST /api/sessions/reschedule HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36748 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36776 - "GET /api/calendar/events?start=2026-06-19T21:58:11.772Z&end=2026-07-26T21:58:11.772Z HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36788 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36760 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36756 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36804 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36818 - "GET /api/calendar/events?start=2026-06-19T21:58:18.269Z&end=2026-07-26T21:58:18.269Z HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36828 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36812 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36796 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36586 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36596 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36600 - "GET /api/calendar/events?start=2026-06-19T21:58:24.080Z&end=2026-07-26T21:58:24.080Z HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36612 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36616 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49766 - "POST /api/sessions/reschedule HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49792 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49802 - "GET /api/calendar/events?start=2026-06-19T21:59:49.819Z&end=2026-07-26T21:59:49.819Z HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49782 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49800 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49806 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54320 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54322 - "GET /api/calendar/events?start=2026-06-19T22:00:26.089Z&end=2026-07-26T22:00:26.089Z HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54354 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54340 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54330 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41818 - "GET /api/sessions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41862 - "GET /api/preferences/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41822 - "GET /api/calendar/events?start=2026-06-19T22:00:32.862Z&end=2026-07-26T22:00:32.862Z HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41848 - "GET /api/tasks/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41836 - "GET /api/tasks/ HTTP/1.1" 200 OK

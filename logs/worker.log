@@ -1,94 +1,45 @@
-23:19:17 Worker bb516e3d02f64a3ebaecdded90507c2b: started with PID 41127, version 2.9.0
-23:19:17 Worker bb516e3d02f64a3ebaecdded90507c2b: subscribing to channel rq:pubsub:bb516e3d02f64a3ebaecdded90507c2b
-23:19:17 *** Listening on tempo_tasks...
-23:19:17 Worker bb516e3d02f64a3ebaecdded90507c2b: cleaning registries for queue: tempo_tasks
-23:19:17 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+02:49:23 Worker b8cae60912d84f07a6319d7e3cc3ce3e: started with PID 15843, version 2.9.0
+02:49:23 Worker b8cae60912d84f07a6319d7e3cc3ce3e: subscribing to channel rq:pubsub:b8cae60912d84f07a6319d7e3cc3ce3e
+02:49:23 *** Listening on tempo_tasks...
+02:49:23 Worker b8cae60912d84f07a6319d7e3cc3ce3e: cleaning registries for queue: tempo_tasks
+03:02:53 Worker b8cae60912d84f07a6319d7e3cc3ce3e: cleaning registries for queue: tempo_tasks
+03:16:23 Worker b8cae60912d84f07a6319d7e3cc3ce3e: cleaning registries for queue: tempo_tasks
+03:27:53 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
 DEBUG: Starting run_scheduling_pipeline
-DEBUG: Found 3 tasks and preferences: True
+DEBUG: Found 11 tasks and preferences: True
 DEBUG: Deleted future sessions
+DEBUG: Pulled 2 calendar blocks
 DEBUG: Starting solver...
-DEBUG: Solver finished. Found 4 sessions.
-DEBUG: Committed results
-DEBUG: Sent REFRESH signal
-DEBUG: Enqueued explanation job
-23:19:20 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:03.013096s on worker bb516e3d02f64a3ebaecdded90507c2b
-23:19:20 tempo_tasks: Job OK (regenerate_schedule_singleton)
-23:19:20 Result is kept for 500 seconds
-23:19:20 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('9a01a3ac-b04d-46a2-bffe-fb4726442c44'), sta..., solver_tasks=[SolverTask(id=UUID('9a01a3ac-b04d-46a2-bffe-fb4726442c44'), title='Action ..., user_id='user_1') (explain_7ccb7a6c-fe6d-4213-b142-74d635202540)
-23:20:04 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('9a01a3ac-b04d-46a2-bffe-fb4726442c44'), sta..., solver_tasks=[SolverTask(id=UUID('9a01a3ac-b04d-46a2-bffe-fb4726442c44'), title='Action ..., user_id='user_1') job in 0:00:43.857503s on worker bb516e3d02f64a3ebaecdded90507c2b
-23:20:04 tempo_tasks: Job OK (explain_7ccb7a6c-fe6d-4213-b142-74d635202540)
-23:20:04 Result is kept for 500 seconds
-23:21:33 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
-DEBUG: Starting run_scheduling_pipeline
-DEBUG: Found 3 tasks and preferences: True
-DEBUG: Deleted future sessions
-DEBUG: Starting solver...
-DEBUG: Solver finished. Found 4 sessions.
-DEBUG: Committed results
-DEBUG: Sent REFRESH signal
-DEBUG: Enqueued explanation job
-23:21:36 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:03.117908s on worker bb516e3d02f64a3ebaecdded90507c2b
-23:21:36 tempo_tasks: Job OK (regenerate_schedule_singleton)
-23:21:36 Result is kept for 500 seconds
-23:21:36 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('9a01a3ac-b04d-46a2-bffe-fb4726442c44'), sta..., solver_tasks=[SolverTask(id=UUID('9a01a3ac-b04d-46a2-bffe-fb4726442c44'), title='Action ..., user_id='user_1') (explain_f14e3737-7f8f-4f62-b9c6-732d2304c337)
-23:22:20 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('9a01a3ac-b04d-46a2-bffe-fb4726442c44'), sta..., solver_tasks=[SolverTask(id=UUID('9a01a3ac-b04d-46a2-bffe-fb4726442c44'), title='Action ..., user_id='user_1') job in 0:00:43.204603s on worker bb516e3d02f64a3ebaecdded90507c2b
-23:22:20 tempo_tasks: Job OK (explain_f14e3737-7f8f-4f62-b9c6-732d2304c337)
-23:22:20 Result is kept for 500 seconds
-23:23:56 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
-DEBUG: Starting run_scheduling_pipeline
-DEBUG: Found 4 tasks and preferences: True
-DEBUG: Deleted future sessions
-DEBUG: Starting solver...
-DEBUG: Solver finished. Found 12 sessions.
-DEBUG: Committed results
-DEBUG: Sent REFRESH signal
-DEBUG: Enqueued explanation job
-23:24:00 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:04.416968s on worker bb516e3d02f64a3ebaecdded90507c2b
-23:24:00 tempo_tasks: Job OK (regenerate_schedule_singleton)
-23:24:00 Result is kept for 500 seconds
-23:24:00 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('d4715f0a-b928-409f-8079-92173cfc48f6'), sta..., solver_tasks=[SolverTask(id=UUID('d4715f0a-b928-409f-8079-92173cfc48f6'), title='Optimiz..., user_id='user_1') (explain_202a97c5-c0aa-403a-9072-85f7499a18d2)
-23:24:45 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('d4715f0a-b928-409f-8079-92173cfc48f6'), sta..., solver_tasks=[SolverTask(id=UUID('d4715f0a-b928-409f-8079-92173cfc48f6'), title='Optimiz..., user_id='user_1') job in 0:00:44.134764s on worker bb516e3d02f64a3ebaecdded90507c2b
-23:24:45 tempo_tasks: Job OK (explain_202a97c5-c0aa-403a-9072-85f7499a18d2)
-23:24:45 Result is kept for 500 seconds
-23:30:09 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
-DEBUG: Starting run_scheduling_pipeline
-DEBUG: Found 4 tasks and preferences: True
-DEBUG: Deleted future sessions
-DEBUG: Starting solver...
-DEBUG: Solver finished. Found 12 sessions.
-DEBUG: Committed results
-DEBUG: Sent REFRESH signal
-DEBUG: Enqueued explanation job
-23:30:13 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:04.598025s on worker bb516e3d02f64a3ebaecdded90507c2b
-23:30:13 tempo_tasks: Job OK (regenerate_schedule_singleton)
-23:30:13 Result is kept for 500 seconds
-23:30:13 Worker bb516e3d02f64a3ebaecdded90507c2b: cleaning registries for queue: tempo_tasks
-23:30:13 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('d4715f0a-b928-409f-8079-92173cfc48f6'), sta..., solver_tasks=[SolverTask(id=UUID('d4715f0a-b928-409f-8079-92173cfc48f6'), title='Optimiz..., user_id='user_1') (explain_1447fdaa-cf3b-42be-a13c-92cc13deb101)
-23:30:57 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('d4715f0a-b928-409f-8079-92173cfc48f6'), sta..., solver_tasks=[SolverTask(id=UUID('d4715f0a-b928-409f-8079-92173cfc48f6'), title='Optimiz..., user_id='user_1') job in 0:00:44.266458s on worker bb516e3d02f64a3ebaecdded90507c2b
-23:30:57 tempo_tasks: Job OK (explain_1447fdaa-cf3b-42be-a13c-92cc13deb101)
-23:30:57 Result is kept for 500 seconds
-23:44:28 Worker bb516e3d02f64a3ebaecdded90507c2b: cleaning registries for queue: tempo_tasks
-23:57:58 Worker bb516e3d02f64a3ebaecdded90507c2b: cleaning registries for queue: tempo_tasks
-00:11:28 Worker bb516e3d02f64a3ebaecdded90507c2b: cleaning registries for queue: tempo_tasks
-00:14:07 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
-DEBUG: Starting run_scheduling_pipeline
-DEBUG: Found 5 tasks and preferences: True
-DEBUG: Deleted future sessions
-DEBUG: Starting solver...
+DEBUG: Skipping task Optimization problem set - deadline in past
 DEBUG: Solver finished. Found 14 sessions.
 DEBUG: Committed results
+DEBUG: Pushed sessions to Google Calendar
 DEBUG: Sent REFRESH signal
 DEBUG: Enqueued explanation job
-00:14:10 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:02.837036s on worker bb516e3d02f64a3ebaecdded90507c2b
-00:14:10 tempo_tasks: Job OK (regenerate_schedule_singleton)
-00:14:10 Result is kept for 500 seconds
-00:14:10 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('d4715f0a-b928-409f-8079-92173cfc48f6'), sta..., solver_tasks=[SolverTask(id=UUID('d4715f0a-b928-409f-8079-92173cfc48f6'), title='Optimiz..., user_id='user_1') (explain_006e9321-7372-4f37-948c-89cd3ad173f5)
-00:14:13 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('d4715f0a-b928-409f-8079-92173cfc48f6'), sta..., solver_tasks=[SolverTask(id=UUID('d4715f0a-b928-409f-8079-92173cfc48f6'), title='Optimiz..., user_id='user_1') job in 0:00:03.141603s on worker bb516e3d02f64a3ebaecdded90507c2b
-00:14:13 tempo_tasks: Job OK (explain_006e9321-7372-4f37-948c-89cd3ad173f5)
-00:14:13 Result is kept for 500 seconds
-00:27:43 Worker bb516e3d02f64a3ebaecdded90507c2b: cleaning registries for queue: tempo_tasks
-00:41:13 Worker bb516e3d02f64a3ebaecdded90507c2b: cleaning registries for queue: tempo_tasks
-00:54:43 Worker bb516e3d02f64a3ebaecdded90507c2b: cleaning registries for queue: tempo_tasks
-01:08:13 Worker bb516e3d02f64a3ebaecdded90507c2b: cleaning registries for queue: tempo_tasks
-01:21:43 Worker bb516e3d02f64a3ebaecdded90507c2b: cleaning registries for queue: tempo_tasks
-01:35:13 Worker bb516e3d02f64a3ebaecdded90507c2b: cleaning registries for queue: tempo_tasks
+03:28:18 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:25.160372s on worker b8cae60912d84f07a6319d7e3cc3ce3e
+03:28:18 tempo_tasks: Job OK (regenerate_schedule_singleton)
+03:28:18 Result is kept for 500 seconds
+03:28:18 Worker b8cae60912d84f07a6319d7e3cc3ce3e: cleaning registries for queue: tempo_tasks
+03:28:18 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('7e1655fc-30cb-4f46-b131-848a86ec299b'), sta..., solver_tasks=[SolverTask(id=UUID('d4715f0a-b928-409f-8079-92173cfc48f6'), title='Optimiz..., user_id='user_1') (explain_9452bd7d-48ed-4875-b6bf-a4082c57205e)
+03:28:24 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('7e1655fc-30cb-4f46-b131-848a86ec299b'), sta..., solver_tasks=[SolverTask(id=UUID('d4715f0a-b928-409f-8079-92173cfc48f6'), title='Optimiz..., user_id='user_1') job in 0:00:05.681542s on worker b8cae60912d84f07a6319d7e3cc3ce3e
+03:28:24 tempo_tasks: Job OK (explain_9452bd7d-48ed-4875-b6bf-a4082c57205e)
+03:28:24 Result is kept for 500 seconds
+03:29:49 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+DEBUG: Starting run_scheduling_pipeline
+DEBUG: Found 11 tasks and preferences: True
+DEBUG: Deleted future sessions
+DEBUG: Pulled 2 calendar blocks
+DEBUG: Starting solver...
+DEBUG: Skipping task Optimization problem set - deadline in past
+DEBUG: Solver finished. Found 14 sessions.
+DEBUG: Committed results
+DEBUG: Pushed sessions to Google Calendar
+DEBUG: Sent REFRESH signal
+DEBUG: Enqueued explanation job
+03:30:26 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:36.294186s on worker b8cae60912d84f07a6319d7e3cc3ce3e
+03:30:26 tempo_tasks: Job OK (regenerate_schedule_singleton)
+03:30:26 Result is kept for 500 seconds
+03:30:26 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('7e1655fc-30cb-4f46-b131-848a86ec299b'), sta..., solver_tasks=[SolverTask(id=UUID('d4715f0a-b928-409f-8079-92173cfc48f6'), title='Optimiz..., user_id='user_1') (explain_63f6a24c-4215-4690-a43f-171dd08b4ffa)
+03:30:32 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('7e1655fc-30cb-4f46-b131-848a86ec299b'), sta..., solver_tasks=[SolverTask(id=UUID('d4715f0a-b928-409f-8079-92173cfc48f6'), title='Optimiz..., user_id='user_1') job in 0:00:06.679001s on worker b8cae60912d84f07a6319d7e3cc3ce3e
+03:30:32 tempo_tasks: Job OK (explain_63f6a24c-4215-4690-a43f-171dd08b4ffa)
+03:30:32 Result is kept for 500 seconds

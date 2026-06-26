@@ -230,20 +230,28 @@ const failedPillStyle = {
 export default function ScheduleView({ refreshTrigger }) {
   const [sessions, setSessions] = useState([]);
   const [tasks, setTasks] = useState([]);
+  const [calEvents, setCalEvents] = useState([]);
   const [prefs, setPrefs] = useState(null);
   const [hoveredBtn, setHoveredBtn] = useState(null);
 
   const fetchData = async () => {
     try {
-      const [sessionsRes, tasksRes, prefsRes] = await Promise.allSettled([
+      const start = new Date();
+      start.setDate(start.getDate() - 7);
+      const end = new Date();
+      end.setDate(end.getDate() + 30);
+      
+      const [sessionsRes, tasksRes, prefsRes, calRes] = await Promise.allSettled([
         client.get('/api/sessions/'),
         client.get('/api/tasks/'),
-        client.get('/api/preferences/')
+        client.get('/api/preferences/'),
+        client.get(`/api/calendar/events?start=${start.toISOString()}&end=${end.toISOString()}`)
       ]);
 
       if (sessionsRes.status === 'fulfilled') setSessions(sessionsRes.value.data);
       if (tasksRes.status === 'fulfilled') setTasks(tasksRes.value.data);
       if (prefsRes.status === 'fulfilled') setPrefs(prefsRes.value.data);
+      if (calRes.status === 'fulfilled') setCalEvents(calRes.value.data);
 
     } catch (err) {
       console.error('Error fetching data:', err);
@@ -273,7 +281,8 @@ export default function ScheduleView({ refreshTrigger }) {
   };
 
   const taskMap = Array.isArray(tasks) ? Object.fromEntries(tasks.map(t => [t.id, t])) : {};
-  const events = Array.isArray(sessions) ? sessions
+  
+  const sessionEvents = Array.isArray(sessions) ? sessions
     .filter(s => s && s.status === 'scheduled')
     .map(s => {
       const task = taskMap[s.task_id];
@@ -284,9 +293,25 @@ export default function ScheduleView({ refreshTrigger }) {
         end: s.end_time ? new Date(s.end_time) : new Date(),
         backgroundColor: priorityColors[task?.priority] || '#7c5cfc',
         borderColor: 'transparent',
-        extendedProps: { session: s, task: task }
+        extendedProps: { type: 'session', session: s, task: task }
       };
     }) : [];
+
+  const googleEvents = Array.isArray(calEvents) ? calEvents
+    .filter(e => e.source === 'google')
+    .map(e => ({
+      id: e.id,
+      title: e.summary || 'Busy (Google Calendar)',
+      start: new Date(e.start_time),
+      end: new Date(e.end_time),
+      backgroundColor: 'rgba(55, 65, 81, 0.5)',
+      borderColor: 'rgba(107, 114, 128, 0.3)',
+      textColor: '#9ca3af',
+      editable: false,
+      extendedProps: { type: 'google', event: e }
+    })) : [];
+
+  const events = [...sessionEvents, ...googleEvents];
 
   return (
     <div style={wrapperStyle}>
@@ -324,7 +349,38 @@ export default function ScheduleView({ refreshTrigger }) {
           allDaySlot={false}
           height="calc(100vh - 120px)"
           eventContent={(eventInfo) => {
-            const { task, session } = eventInfo.event.extendedProps;
+            const { type, task, session } = eventInfo.event.extendedProps;
+            
+            if (type === 'google') {
+              return (
+                <div style={{
+                  padding: '2px 4px',
+                  fontSize: 'var(--font-size-xs)',
+                  color: '#9ca3af',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  height: '100%',
+                  opacity: 0.8
+                }}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ flexShrink: 0 }}>
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                    <line x1="16" y1="2" x2="16" y2="6"/>
+                    <line x1="8" y1="2" x2="8" y2="6"/>
+                    <line x1="3" y1="10" x2="21" y2="10"/>
+                  </svg>
+                  <span style={{ 
+                    fontWeight: 'var(--font-weight-medium)',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    whiteSpace: 'nowrap'
+                  }}>
+                    {eventInfo.event.title}
+                  </span>
+                </div>
+              );
+            }
+
             const color = priorityColors[task?.priority] || '#7c5cfc';
             const doneKey = `done-${session?.id}`;
             const failKey = `fail-${session?.id}`;

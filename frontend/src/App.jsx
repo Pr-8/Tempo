@@ -3,6 +3,7 @@ import AddTaskForm from './components/AddTaskForm';
 import ScheduleView from './components/ScheduleView';
 import ChatPanel from './components/ChatPanel';
 import MemoryPanel from './components/MemoryPanel';
+import CalendarSettings from './components/CalendarSettings';
 import client from './api/client';
 
 /* ── Error Boundary ──────────────────────────────────────── */
@@ -413,6 +414,9 @@ function App() {
               <div style={{ marginTop: '20px' }}>
                 <MemoryPanel />
               </div>
+
+              {/* Calendar Settings */}
+              <CalendarSettings />
             </div>
           </>
         )}

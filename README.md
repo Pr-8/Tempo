@@ -75,6 +75,9 @@ cd backend
     DATABASE_URL=postgresql://tempo_user:tempo_password@localhost:5432/tempo_db
     REDIS_URL=redis://localhost:6379
     GEMINI_API_KEY=your_gemini_api_key_here
+    GOOGLE_CLIENT_ID=your_google_client_id_here
+    GOOGLE_CLIENT_SECRET=your_google_client_secret_here
+    GOOGLE_REDIRECT_URI=http://localhost:8000/api/calendar/callback
     ```
 
 4.  **Run Database Migrations**:
@@ -89,6 +92,23 @@ Navigate to the `frontend/` directory and install the packages:
 cd ../frontend
 npm install
 ```
+
+### 4. Google Calendar API (OAuth2) Setup
+To enable Google Calendar sync, you need to configure an OAuth2 client:
+
+1. **Google Cloud Console**: Go to the [Google Cloud Console](https://console.cloud.google.com/) and create/select a project.
+2. **Enable API**: Enable the **Google Calendar API** (via *APIs & Services > Library*).
+3. **OAuth Consent Screen**:
+   - Go to *APIs & Services > OAuth consent screen*, select **External** user type, and click **Create**.
+   - Enter basic application info (e.g., App name: `Tempo`).
+   - Keep the publishing status as **Testing**.
+   - Scroll to **Test users**, click **Add Users**, and add your Google email address (e.g. `your-email@gmail.com`) to allow access while in testing mode. Otherwise, Google blocks authorization with a `403 access_denied` error.
+4. **Create Credentials**:
+   - Go to *APIs & Services > Credentials*, click **Create Credentials**, and choose **OAuth client ID**.
+   - Select application type **Web application**.
+   - Add `http://localhost:8000/api/calendar/callback` to the **Authorized redirect URIs** list.
+5. **Configure `.env`**:
+   - Copy the Client ID and Client Secret from the console and paste them into your `backend/.env` file.
 
 ---
 
