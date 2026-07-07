@@ -1,45 +1,115 @@
-02:49:23 Worker b8cae60912d84f07a6319d7e3cc3ce3e: started with PID 15843, version 2.9.0
-02:49:23 Worker b8cae60912d84f07a6319d7e3cc3ce3e: subscribing to channel rq:pubsub:b8cae60912d84f07a6319d7e3cc3ce3e
-02:49:23 *** Listening on tempo_tasks...
-02:49:23 Worker b8cae60912d84f07a6319d7e3cc3ce3e: cleaning registries for queue: tempo_tasks
-03:02:53 Worker b8cae60912d84f07a6319d7e3cc3ce3e: cleaning registries for queue: tempo_tasks
-03:16:23 Worker b8cae60912d84f07a6319d7e3cc3ce3e: cleaning registries for queue: tempo_tasks
-03:27:53 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+01:21:31 Worker f4f6e42af3994543a0a03bcdfd3dd53b: started with PID 15271, version 2.9.0
+01:21:31 Worker f4f6e42af3994543a0a03bcdfd3dd53b: subscribing to channel rq:pubsub:f4f6e42af3994543a0a03bcdfd3dd53b
+01:21:31 *** Listening on tempo_tasks...
+01:21:31 Worker f4f6e42af3994543a0a03bcdfd3dd53b: cleaning registries for queue: tempo_tasks
+01:21:31 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+Schedule regeneration failed: (psycopg2.errors.ForeignKeyViolation) insert or update on table "sessions" violates foreign key constraint "sessions_task_id_fkey"
+DETAIL:  Key (task_id)=(c47a1347-a33b-4e36-aab9-82e769e36e51) is not present in table "tasks".
+
+[SQL: INSERT INTO sessions (id, task_id, start_time, end_time, duration_minutes, status, created_at) VALUES (%(id__0)s::UUID, %(task_id__0)s::UUID, %(start_time__0)s, %(end_time__0)s, %(duration_minutes__0)s, %(status__0)s, %(created_at__0)s), (%(id__1)s:: ... 294 characters truncated ... UUID, %(start_time__3)s, %(end_time__3)s, %(duration_minutes__3)s, %(status__3)s, %(created_at__3)s)]
+[parameters: {'duration_minutes__0': 60, 'id__0': UUID('bf3c4797-1c1a-4b03-973d-224e03cdbd69'), 'created_at__0': datetime.datetime(2026, 7, 8, 1, 21, 33, 79544), 'end_time__0': datetime.datetime(2026, 7, 8, 9, 0), 'task_id__0': UUID('c47a1347-a33b-4e36-aab9-82e769e36e51'), 'status__0': 'scheduled', 'start_time__0': datetime.datetime(2026, 7, 8, 8, 0), 'duration_minutes__1': 60, 'id__1': UUID('1cdcb450-e6d8-46c0-a851-5e32c61af2b6'), 'created_at__1': datetime.datetime(2026, 7, 8, 1, 21, 33, 79544), 'end_time__1': datetime.datetime(2026, 7, 8, 10, 0), 'task_id__1': UUID('a8fbe154-6420-4eeb-9b9a-87720935357e'), 'status__1': 'scheduled', 'start_time__1': datetime.datetime(2026, 7, 8, 9, 0), 'duration_minutes__2': 90, 'id__2': UUID('5135fbdf-f6b5-4e74-8c1d-675589d441dd'), 'created_at__2': datetime.datetime(2026, 7, 8, 1, 21, 33, 79544), 'end_time__2': datetime.datetime(2026, 7, 8, 12, 30), 'task_id__2': UUID('a8fbe154-6420-4eeb-9b9a-87720935357e'), 'status__2': 'scheduled', 'start_time__2': datetime.datetime(2026, 7, 8, 11, 0), 'duration_minutes__3': 60, 'id__3': UUID('99001981-235e-4edf-b1e7-266f29058109'), 'created_at__3': datetime.datetime(2026, 7, 8, 1, 21, 33, 79544), 'end_time__3': datetime.datetime(2026, 7, 8, 11, 0), 'task_id__3': UUID('80c9d171-bfb9-4949-a3e8-f4206b5e5096'), 'status__3': 'scheduled', 'start_time__3': datetime.datetime(2026, 7, 8, 10, 0)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
 DEBUG: Starting run_scheduling_pipeline
-DEBUG: Found 11 tasks and preferences: True
+DEBUG: Found 16 tasks and preferences: True
 DEBUG: Deleted future sessions
-DEBUG: Pulled 2 calendar blocks
+Error refreshing Google OAuth credentials: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+DEBUG: Pulled 1 calendar blocks
 DEBUG: Starting solver...
 DEBUG: Skipping task Optimization problem set - deadline in past
-DEBUG: Solver finished. Found 14 sessions.
+DEBUG: Skipping task Calculus assignment - deadline in past
+DEBUG: Skipping task Action Task - deadline in past
+DEBUG: Skipping task Test Task - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Action Task - deadline in past
+DEBUG: Skipping task Test Task - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Skipping task Economics Presentation Preparation - deadline in past
+DEBUG: Skipping task Calculus assignment - deadline in past
+DEBUG: Skipping task Action Task - deadline in past
+DEBUG: Skipping task Test Task - deadline in past
+DEBUG: Skipping task Updated Title - deadline in past
+DEBUG: Solver finished. Found 4 sessions.
+01:23:36 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:02:04.541846s on worker f4f6e42af3994543a0a03bcdfd3dd53b
+01:23:36 tempo_tasks: Job OK (regenerate_schedule_singleton)
+01:23:36 Result is kept for 500 seconds
+01:27:23 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+DEBUG: Starting run_scheduling_pipeline
+DEBUG: Found 2 tasks and preferences: True
+DEBUG: Deleted future sessions
+Error refreshing Google OAuth credentials: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+DEBUG: Pulled 1 calendar blocks
+DEBUG: Starting solver...
+DEBUG: Solver finished. Found 8 sessions.
 DEBUG: Committed results
+Error refreshing Google OAuth credentials: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
 DEBUG: Pushed sessions to Google Calendar
 DEBUG: Sent REFRESH signal
 DEBUG: Enqueued explanation job
-03:28:18 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:25.160372s on worker b8cae60912d84f07a6319d7e3cc3ce3e
-03:28:18 tempo_tasks: Job OK (regenerate_schedule_singleton)
-03:28:18 Result is kept for 500 seconds
-03:28:18 Worker b8cae60912d84f07a6319d7e3cc3ce3e: cleaning registries for queue: tempo_tasks
-03:28:18 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('7e1655fc-30cb-4f46-b131-848a86ec299b'), sta..., solver_tasks=[SolverTask(id=UUID('d4715f0a-b928-409f-8079-92173cfc48f6'), title='Optimiz..., user_id='user_1') (explain_9452bd7d-48ed-4875-b6bf-a4082c57205e)
-03:28:24 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('7e1655fc-30cb-4f46-b131-848a86ec299b'), sta..., solver_tasks=[SolverTask(id=UUID('d4715f0a-b928-409f-8079-92173cfc48f6'), title='Optimiz..., user_id='user_1') job in 0:00:05.681542s on worker b8cae60912d84f07a6319d7e3cc3ce3e
-03:28:24 tempo_tasks: Job OK (explain_9452bd7d-48ed-4875-b6bf-a4082c57205e)
-03:28:24 Result is kept for 500 seconds
-03:29:49 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+01:27:26 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:03.087909s on worker f4f6e42af3994543a0a03bcdfd3dd53b
+01:27:26 tempo_tasks: Job OK (regenerate_schedule_singleton)
+01:27:26 Result is kept for 500 seconds
+01:27:26 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('b6c7efd8-9fd8-4b91-b1ef-cfecf858dd5b'), sta..., solver_tasks=[SolverTask(id=UUID('b6c7efd8-9fd8-4b91-b1ef-cfecf858dd5b'), title='Study R..., user_id='user_1') (explain_a147310e-d933-4474-9b21-4277127d3d56)
+01:27:29 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('b6c7efd8-9fd8-4b91-b1ef-cfecf858dd5b'), sta..., solver_tasks=[SolverTask(id=UUID('b6c7efd8-9fd8-4b91-b1ef-cfecf858dd5b'), title='Study R..., user_id='user_1') job in 0:00:02.928983s on worker f4f6e42af3994543a0a03bcdfd3dd53b
+01:27:29 tempo_tasks: Job OK (explain_a147310e-d933-4474-9b21-4277127d3d56)
+01:27:29 Result is kept for 500 seconds
+01:30:47 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
 DEBUG: Starting run_scheduling_pipeline
-DEBUG: Found 11 tasks and preferences: True
+DEBUG: Found 3 tasks and preferences: True
 DEBUG: Deleted future sessions
-DEBUG: Pulled 2 calendar blocks
+Error refreshing Google OAuth credentials: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+DEBUG: Pulled 1 calendar blocks
 DEBUG: Starting solver...
-DEBUG: Skipping task Optimization problem set - deadline in past
-DEBUG: Solver finished. Found 14 sessions.
+DEBUG: Solver finished. Found 10 sessions.
 DEBUG: Committed results
+Error refreshing Google OAuth credentials: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
 DEBUG: Pushed sessions to Google Calendar
 DEBUG: Sent REFRESH signal
 DEBUG: Enqueued explanation job
-03:30:26 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:36.294186s on worker b8cae60912d84f07a6319d7e3cc3ce3e
-03:30:26 tempo_tasks: Job OK (regenerate_schedule_singleton)
-03:30:26 Result is kept for 500 seconds
-03:30:26 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('7e1655fc-30cb-4f46-b131-848a86ec299b'), sta..., solver_tasks=[SolverTask(id=UUID('d4715f0a-b928-409f-8079-92173cfc48f6'), title='Optimiz..., user_id='user_1') (explain_63f6a24c-4215-4690-a43f-171dd08b4ffa)
-03:30:32 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('7e1655fc-30cb-4f46-b131-848a86ec299b'), sta..., solver_tasks=[SolverTask(id=UUID('d4715f0a-b928-409f-8079-92173cfc48f6'), title='Optimiz..., user_id='user_1') job in 0:00:06.679001s on worker b8cae60912d84f07a6319d7e3cc3ce3e
-03:30:32 tempo_tasks: Job OK (explain_63f6a24c-4215-4690-a43f-171dd08b4ffa)
-03:30:32 Result is kept for 500 seconds
+01:30:50 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:03.001317s on worker f4f6e42af3994543a0a03bcdfd3dd53b
+01:30:50 tempo_tasks: Job OK (regenerate_schedule_singleton)
+01:30:50 Result is kept for 500 seconds
+01:30:50 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('b6c7efd8-9fd8-4b91-b1ef-cfecf858dd5b'), sta..., solver_tasks=[SolverTask(id=UUID('b6c7efd8-9fd8-4b91-b1ef-cfecf858dd5b'), title='Study R..., user_id='user_1') (explain_100264db-d221-48c1-83f7-473b91911ba7)
+01:30:53 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('b6c7efd8-9fd8-4b91-b1ef-cfecf858dd5b'), sta..., solver_tasks=[SolverTask(id=UUID('b6c7efd8-9fd8-4b91-b1ef-cfecf858dd5b'), title='Study R..., user_id='user_1') job in 0:00:03.326343s on worker f4f6e42af3994543a0a03bcdfd3dd53b
+01:30:53 tempo_tasks: Job OK (explain_100264db-d221-48c1-83f7-473b91911ba7)
+01:30:53 Result is kept for 500 seconds
+01:31:08 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+DEBUG: Starting run_scheduling_pipeline
+DEBUG: Found 2 tasks and preferences: True
+DEBUG: Deleted future sessions
+Error refreshing Google OAuth credentials: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+DEBUG: Pulled 1 calendar blocks
+DEBUG: Starting solver...
+DEBUG: Solver finished. Found 8 sessions.
+DEBUG: Committed results
+Error refreshing Google OAuth credentials: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+DEBUG: Pushed sessions to Google Calendar
+DEBUG: Sent REFRESH signal
+DEBUG: Enqueued explanation job
+01:31:11 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:02.559792s on worker f4f6e42af3994543a0a03bcdfd3dd53b
+01:31:11 tempo_tasks: Job OK (regenerate_schedule_singleton)
+01:31:11 Result is kept for 500 seconds
+01:31:11 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('b6c7efd8-9fd8-4b91-b1ef-cfecf858dd5b'), sta..., solver_tasks=[SolverTask(id=UUID('b6c7efd8-9fd8-4b91-b1ef-cfecf858dd5b'), title='Study R..., user_id='user_1') (explain_69162f24-539f-4cb8-80d7-cd1cec34957d)
+01:31:14 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('b6c7efd8-9fd8-4b91-b1ef-cfecf858dd5b'), sta..., solver_tasks=[SolverTask(id=UUID('b6c7efd8-9fd8-4b91-b1ef-cfecf858dd5b'), title='Study R..., user_id='user_1') job in 0:00:02.850733s on worker f4f6e42af3994543a0a03bcdfd3dd53b
+01:31:14 tempo_tasks: Job OK (explain_69162f24-539f-4cb8-80d7-cd1cec34957d)
+01:31:14 Result is kept for 500 seconds
+01:32:10 tempo_tasks: app.workers.jobs.regenerate_schedule_job() (regenerate_schedule_singleton)
+DEBUG: Starting run_scheduling_pipeline
+DEBUG: Found 2 tasks and preferences: True
+DEBUG: Deleted future sessions
+Error refreshing Google OAuth credentials: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+DEBUG: Pulled 1 calendar blocks
+DEBUG: Starting solver...
+DEBUG: Solver finished. Found 8 sessions.
+DEBUG: Committed results
+Error refreshing Google OAuth credentials: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+DEBUG: Pushed sessions to Google Calendar
+DEBUG: Sent REFRESH signal
+DEBUG: Enqueued explanation job
+01:32:13 Successfully completed app.workers.jobs.regenerate_schedule_job() job in 0:00:02.538522s on worker f4f6e42af3994543a0a03bcdfd3dd53b
+01:32:13 tempo_tasks: Job OK (regenerate_schedule_singleton)
+01:32:13 Result is kept for 500 seconds
+01:32:13 Worker f4f6e42af3994543a0a03bcdfd3dd53b: cleaning registries for queue: tempo_tasks
+01:32:13 tempo_tasks: app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('d7f78c0a-8f33-4444-8b9b-38de2f1cd128'), sta..., solver_tasks=[SolverTask(id=UUID('d7f78c0a-8f33-4444-8b9b-38de2f1cd128'), title='Real An..., user_id='user_1') (explain_2fd16d34-0a3c-4a13-9af5-f5bb83aef627)
+01:32:16 Successfully completed app.services.scheduling_service.generate_explanation_background(scheduled_sessions=[ScheduledSession(task_id=UUID('d7f78c0a-8f33-4444-8b9b-38de2f1cd128'), sta..., solver_tasks=[SolverTask(id=UUID('d7f78c0a-8f33-4444-8b9b-38de2f1cd128'), title='Real An..., user_id='user_1') job in 0:00:02.763557s on worker f4f6e42af3994543a0a03bcdfd3dd53b
+01:32:16 tempo_tasks: Job OK (explain_2fd16d34-0a3c-4a13-9af5-f5bb83aef627)
+01:32:16 Result is kept for 500 seconds

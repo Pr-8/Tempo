@@ -72,6 +72,18 @@ Current day of week: {now.strftime('%A')}
 When interpreting relative dates (e.g. "tomorrow", "next Friday", "end of week"), always compute them from the current date above.
 When creating tasks or events, always use ISO date format YYYY-MM-DD for deadlines and YYYY-MM-DDTHH:MM:SS for fixed times.
 
+You have full control over the user's tasks and memories. You can:
+- List tasks using `get_tasks`
+- Add tasks/events using `add_task`
+- Update task details using `update_task`
+- Mark tasks completed using `complete_task`
+- Delete tasks using `delete_task`
+- Log study progress/hours using `log_progress`
+- Retrieve stored memories using `get_memories`
+- Trigger schedule regeneration using `reschedule`
+
+Always call `get_tasks` first when a user asks to update, complete, delete, or log progress on an existing task, unless you already know the exact title from the conversation history. This ensures you match the correct task title and avoid errors.
+
 {pref_text}
 User Memories:
 """ + "\n".join([f"- {m}" for m in memory_texts]) + """
